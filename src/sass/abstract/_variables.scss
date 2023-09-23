@@ -1,0 +1,45 @@
+/* Brand Colors */
+$primary-color: #CC9933;
+$secondary-color: #1E1D1F;
+$background-color: #F5F5F5;
+$accent-color: #1DB954;
+$gray-color: #FFFFFFB2;
+$red-color: #DA0505;
+
+
+/* Typography */
+$base-font-size: 16px; // Define a base font size for responsive typography
+$heading-font-family: 'Inter', sans-serif;
+$body-font-family: 'Open sans', sans-serif;
+
+/* Font Sizes */
+$font-size-xs: 14px;
+$font-size-sm: 16px;
+$font-size-md: 18px;
+$font-size-lg: 24px;
+$font-size-xl: 32px;
+
+/* Padding and Margin */
+$spacing-unit: 8px; // Define a consistent spacing unit for responsive spacing
+$padding-xs: calc($spacing-unit * 1);
+$padding-sm: calc($spacing-unit * 2);
+$padding-md: calc($spacing-unit * 3);
+$padding-lg: calc($spacing-unit * 4);
+
+$margin-xs: calc($spacing-unit * 1);
+$margin-sm: calc($spacing-unit * 2);
+$margin-md: calc($spacing-unit * 3);
+$margin-lg: calc($spacing-unit * 4);
+
+/* Border Radius */
+$border-radius-xs: calc($spacing-unit / 2);
+$border-radius-sm: $spacing-unit;
+$border-radius-md: calc($spacing-unit * 1.5);
+$border-radius-lg: calc($spacing-unit * 2);
+
+/* Width */
+$container-max-width: 1200px; // Define a container max-width for responsive layouts
+$full-width: 100%;
+$large-width: 80%;
+$medium-width: 50%;
+$small-width: 30%;

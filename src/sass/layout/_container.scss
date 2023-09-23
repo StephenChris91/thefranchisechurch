@@ -1,0 +1,12 @@
+@import '../abstract/variables';
+@import '../abstract//mixins';
+
+.container-full{
+    width: $container-max-width;
+    padding: $spacing-unit;
+}
+
+.container{
+    width: $large-width;
+    padding: $padding-lg;
+}

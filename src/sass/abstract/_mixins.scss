@@ -1,0 +1,27 @@
+@mixin media-query($breakpoint) {
+    @media screen and (min-width: $breakpoint) {
+      @content;
+    }
+  }
+
+  @mixin flexbox($direction, $justify) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: center;
+  }
+
+ 
+  @mixin transition($properties, $duration) {
+    transition: $properties $duration ease-in-out;
+  }
+
+  
+  @mixin placeholder($color) {
+    &::placeholder {
+      color: $color;
+    }
+  }
+  
+  
+  

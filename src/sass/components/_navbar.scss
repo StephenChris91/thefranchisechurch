@@ -1,0 +1,33 @@
+@use '../abstract/mixins' as *;
+@use '../abstract/variables' as *;
+// @use '../components//navbar' as *;
+
+#header-wrapper{
+    min-width: $full-width;
+    // height: 550px;
+    background-color: $secondary-color;
+    padding-top: $padding-xs;
+    .nav-container{
+        width: $large-width;
+        @include flexbox(row, space-between);
+        // border: 1px solid red;
+        margin: auto;
+        padding: $padding-xs;
+        background-color: transparent;
+        img{
+            width: 5%;
+        }
+        .nav{
+            @include flexbox(row, space-between);
+            a {
+                text-decoration: none;
+                margin-right: $margin-sm;
+                color: $background-color;
+                @include transition(all, .3s);
+                &:hover{
+                    color: $accent-color;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+// 6x6 Grid
+@mixin grid-6x6 {
+    .grid-6x6 {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: $gutter-width;
+    }
+  }
+  
+  // 4x4 Grid
+  @mixin grid-4x4 {
+    .grid-4x4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: $gutter-width;
+    }
+  }
+  
+  // 2x2 Grid
+  @mixin grid-2x2 {
+    .grid-2x2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: $gutter-width;
+    }
+  }
