@@ -1,5 +1,7 @@
+@use '../abstract/variables';
+
 @mixin media-query($breakpoint) {
-    @media screen and (min-width: $breakpoint) {
+    @media screen and (max-width: $breakpoint) {
       @content;
     }
   }
@@ -20,6 +22,20 @@
   @mixin placeholder($color) {
     &::placeholder {
       color: $color;
+    }
+  }
+
+  @mixin button($bg-color, $text-color, $width, $border, $padding, $radius) {
+    width: $width;
+    background-color: $bg-color;
+    color: $text-color;
+    padding: $padding;
+    border: none;
+    border-radius: $radius;
+    cursor: pointer;
+  
+    &:hover {
+      background-color: darken($bg-color, 10%);
     }
   }
   

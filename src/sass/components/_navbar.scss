@@ -15,19 +15,49 @@
         padding: $padding-xs;
         background-color: transparent;
         img{
-            width: 5%;
+            width: 30%;
         }
-        .nav{
+
+        .menu-container{
+            @include flexbox(row, space-between);
+            
+            .nav{
             @include flexbox(row, space-between);
             a {
                 text-decoration: none;
-                margin-right: $margin-sm;
+                text-transform: uppercase;
+                margin-right: $margin-lg;
                 color: $background-color;
                 @include transition(all, .3s);
                 &:hover{
-                    color: $accent-color;
+                    color: $primary-color;
+                    border-bottom: 2px solid $primary-color;
+                //     background-color: color-mix(in srgb, $primary-color
+                //  10%, $secondary-color 5%);
+                //  padding: $padding-xxs;
+                 border-radius: $border-radius-xs;
                 }
             }
         }
+        button{
+            @include button($primary-color, $background-color, full, none, 10px, 2px);
+            @include flexbox(row, space-between);
+            margin: auto;
+            .icon{
+                font-size: 30px;
+                margin-left: 20px;
+            }
+        }
+
+        .hamburger{
+            color: $background-color;
+            font-size: 30px;
+            display: none;
+            @include media-query(575px){
+                display: block;
+            }
+        }
+        }
+        
     }
 }

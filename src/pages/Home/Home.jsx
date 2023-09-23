@@ -1,11 +1,11 @@
 import Navbar from '../../components/Navbar'
-import Slider from '../../components/Slider'
+// import Slider from '../../components/Header'
 
 function Home() {
 
   return (
     <>
-      <Slider />
+      {/* <Header /> */}
     </>
   )
 }

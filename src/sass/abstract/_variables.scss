@@ -1,7 +1,7 @@
 /* Brand Colors */
 $primary-color: #CC9933;
 $secondary-color: #1E1D1F;
-$background-color: #F5F5F5;
+$background-color: #F5F5F5;  
 $accent-color: #1DB954;
 $gray-color: #FFFFFFB2;
 $red-color: #DA0505;
@@ -21,6 +21,7 @@ $font-size-xl: 32px;
 
 /* Padding and Margin */
 $spacing-unit: 8px; // Define a consistent spacing unit for responsive spacing
+$padding-xxs: calc($spacing-unit /2);
 $padding-xs: calc($spacing-unit * 1);
 $padding-sm: calc($spacing-unit * 2);
 $padding-md: calc($spacing-unit * 3);
