@@ -22,8 +22,8 @@ function Navbar() {
                   <FaYoutube className='icon'/>
                 </span>
               </button>
+              <GiHamburgerMenu className="hamburger"/>
             </div>
-        <GiHamburgerMenu className="hamburger"/>
         </div>
       </section>
     )

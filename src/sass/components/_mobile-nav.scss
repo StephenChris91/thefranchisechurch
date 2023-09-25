@@ -20,15 +20,12 @@
 
         .menu-container{
             @include flexbox(row, space-between);
-            @include media-query(575px){
-                display: none !important;
-            }
             
             .nav{
             @include flexbox(row, space-between);
             a {
                 text-decoration: none;
-                text-transform:uppercase;
+                text-transform: uppercase;
                 margin-right: $margin-lg;
                 color: $background-color;
                 @include transition(all, .3s);
@@ -51,17 +48,15 @@
                 margin-left: 20px;
             }
         }
-
-        
         }
-        .hamburger{
-            color: $background-color;
-            font-size: 30px;
-            display: none;
-            @include media-query(575px){
-                display: block;
-            }
-        } 
     }
-    
+
+    .hamburger{
+        color: $background-color;
+        font-size: 30px;
+        display: none;
+        @include media-query(575px){
+            display: block;
+        }
+    }
 }
