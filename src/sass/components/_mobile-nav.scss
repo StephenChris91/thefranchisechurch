@@ -2,14 +2,14 @@
 @use '../abstract/variables' as *;
 // @use '../components//navbar' as *;
 
-#header-wrapper{
+#mobile-header-wrapper{
     min-width: $full-width;
-    // height: 550px;
+    height: 100vh;
     background-color: $secondary-color;
     padding-top: $padding-xs;
-    .nav-container{
+    .mobile-nav-container{
         width: $large-width;
-        @include flexbox(row, space-between);
+        @include flexbox(column, space-between, flex-start);
         // border: 1px solid red;
         margin: auto;
         padding: $padding-xs;
@@ -18,40 +18,43 @@
             width: 30%;
         }
 
-        .menu-container{
-            @include flexbox(row, space-between);
+        .mobile-menu-container{
+            @include flexbox(column, space-between, flex-start);
             
-            .nav{
-            @include flexbox(row, space-between);
+            @include media-query(575px){
+                display: block !important;
+            }
+            .mobile-nav{
+            @include flexbox(column, space-between, flex-start);
             a {
                 text-decoration: none;
                 text-transform: uppercase;
                 margin-right: $margin-lg;
+                margin-bottom: 30px;
                 color: $background-color;
                 @include transition(all, .3s);
                 &:hover{
                     color: $primary-color;
                     border-bottom: 2px solid $primary-color;
-                //     background-color: color-mix(in srgb, $primary-color
-                //  10%, $secondary-color 5%);
-                //  padding: $padding-xxs;
-                 border-radius: $border-radius-xs;
+                    border-radius: $border-radius-xs;
                 }
             }
         }
         button{
             @include button($primary-color, $background-color, full, none, 10px, 2px);
-            @include flexbox(row, space-between);
+            @include flexbox(row, space-between, center);
             margin: auto;
             .icon{
                 font-size: 30px;
                 margin-left: 20px;
+                display: flex;
+                align-self: flex-end;
             }
         }
         }
     }
 
-    .hamburger{
+    .mobile-hamburger{
         color: $background-color;
         font-size: 30px;
         display: none;
