@@ -51,6 +51,12 @@
         // margin-top: 10px;
       }
 
+      @include media-query(575px){
+        h1{
+          font-size: 1rem;
+        }
+      }
+
       button{
         @include button-with-icon($primary-color, $background-color, full, none, 10px, 2px, $text-color);
       }

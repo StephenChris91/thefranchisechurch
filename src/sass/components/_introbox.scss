@@ -1,0 +1,26 @@
+@use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
+
+.box-wrapper{
+    width: $average-width;
+    background-color: $background-color;
+    @include flexbox(row, space-between, center);
+    gap: 45px;
+    margin: auto;
+    position: absolute;
+    top: 600px;
+    left: 15%;
+    z-index: 999;
+    padding: $padding-sm;
+    border-radius: $border-radius-xs;
+
+    .intro-text{
+
+        .intro-summary{
+            margin-bottom: $margin-md;
+        }
+        button{
+            @include button($secondary-color, $background-color, full, none, 10px, 2px);
+        }
+    }
+}
