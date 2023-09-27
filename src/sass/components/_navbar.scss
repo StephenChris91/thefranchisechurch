@@ -10,9 +10,7 @@
 
 header{
     min-width: full;
-    // background-color: $secondary-color;
-    // padding-top: $padding-xs;
-    
+        z-index: 99;
         @include flexbox(row, space-between, center);
         margin: auto;
         padding: $padding-xs;
