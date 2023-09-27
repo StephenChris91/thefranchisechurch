@@ -1,6 +1,7 @@
 // src/components/Header.js
 import React from 'react';
 // import './Header.scss';
+import { FaYoutube } from 'react-icons/fa'
 
 const Header = () => {
   return (
@@ -11,8 +12,12 @@ const Header = () => {
       </video>
       <div className="header-content">
         {/* Add your header content here */}
-        <h1>Your Website Header</h1>
-        <p>Welcome to your website.</p>
+        <h1>The Franchise Lagos</h1>
+        <p>Welcome to Church</p>
+        <button class="button-primary">
+          Join Us Today
+         <FaYoutube className='icon' />
+        </button>
       </div>
     </header>
   );

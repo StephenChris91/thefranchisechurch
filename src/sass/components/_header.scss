@@ -13,7 +13,7 @@
     };
     video {
       object-fit: cover;
-      width: 100%;
+      width: $full-width;
       height: 100%;
       position: absolute;
       top: 0;
@@ -26,7 +26,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
+      width: $full-width;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.9); /* Adjust the color and opacity as needed */
       z-index: 1;
@@ -40,15 +40,19 @@
       text-align: center;
       color: #fff;
       z-index: 2;
-  
+      width: $full-width;
       h1 {
-        font-size: 2rem;
+        font-size: 8rem;
         margin: 0;
       }
   
       p {
-        font-size: 1rem;
-        margin-top: 10px;
+        font-size: 4rem;
+        // margin-top: 10px;
+      }
+
+      button{
+        @include button-with-icon($primary-color, $background-color, full, none, 10px, 2px, $text-color);
       }
     }
   }
