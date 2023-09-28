@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 import Navbar from "./Navbar"
-import MobileNavbar from "./mobile-nav"
+// import MobileNavbar from "./mobile-nav"
 
 
 function Layout( { children } ) {

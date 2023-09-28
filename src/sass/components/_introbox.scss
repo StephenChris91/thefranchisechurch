@@ -7,12 +7,17 @@
     @include flexbox(row, space-between, center);
     gap: 45px;
     margin: auto;
-    position: absolute;
-    top: 600px;
-    left: 15%;
+    position: relative;
+    top: -200px;
+    left: 0%;
     z-index: 999;
     padding: $padding-sm;
     border-radius: $border-radius-xs;
+
+    &::after{
+        content: '';
+        clear: both;
+    }
 
     .intro-text{
 
