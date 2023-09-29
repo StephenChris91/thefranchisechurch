@@ -8,17 +8,17 @@ function FeaturesBox() {
         <section className='features-wrapper'>
           <div className="features-box box-1">
             <p className="features-box-text">
-              Lorem ipsum dolor sit amet.
+              FRIENSHIPS
             </p>
           </div>
           <div className="features-box box-2">
             <p className="features-box-text">
-              Lorem ipsum dolor sit amet.
+              STUDY
             </p>
           </div>
           <div className="features-box box-3" >
             <p className="features-box-text">
-              Lorem ipsum dolor sit amet.
+              WORD
             </p>
           </div>
         </section>
