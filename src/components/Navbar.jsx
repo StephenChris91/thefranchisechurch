@@ -24,18 +24,18 @@ function Navbar() {
             <Link to='/'>
                 <img src="/assets/images/logo.png" alt="logo" />
             </Link>
-              <nav className="nav" ref={navRef}>
-                  <Link to='/'>Home</Link>
-                  <Link to='/about'>About</Link>
-                  <Link to='/event'>Events</Link>
-                  <Link to='/livestream'>Livestream</Link>
-                  <button className="btn-primary">
+            <nav className="nav" ref={navRef}>
+                <Link to='/'>Home</Link>
+                <Link to='/about'>About</Link>
+                <Link to='/event'>Events</Link>
+                <Link to='/livestream'>Livestream</Link>
+                <button className="btn-primary">
                     Join Us Online
                       <FaYoutube className='icon'/>
-                  </button>
-                  <button  className='mobile-close-btn nav-btn' onClick={openMobileNav}>
+                </button>
+                <button  className='mobile-close-btn nav-btn' onClick={openMobileNav}>
                     <FaTimes/>
-                  </button>
+                </button>
               </nav>
             <button 
             className="mobile-open-btn nav-btn" 

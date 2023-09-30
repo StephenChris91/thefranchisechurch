@@ -1,6 +1,7 @@
-import FeaturesBox from '../../components/Features'
-import Header from '../../components/Header'
-import IntroBox from '../../components/IntroBox'
+import FeaturesBox from '../../components/Features';
+import Header from '../../components/Header';
+import IntroBox from '../../components/IntroBox';
+import Slider from '../../components/Slider';
 
 function Home() {
 
@@ -9,6 +10,7 @@ function Home() {
       <Header />
       <IntroBox />
       <FeaturesBox />
+      <Slider />
     </div>
   )
 }

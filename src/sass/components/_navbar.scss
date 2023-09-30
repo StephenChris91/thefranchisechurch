@@ -1,6 +1,6 @@
 @use '../abstract/mixins' as *;
 @use '../abstract/variables' as *;
-// @use '../components//navbar' as *;
+// @use '../components/navbar' as *;
 
 
 #header-wrapper{
@@ -9,7 +9,7 @@
     margin: auto;
 
 header{
-    min-width: full;
+    max-width: $average-width;
         z-index: 99;
         @include flexbox(row, space-between, center);
         margin: auto;
