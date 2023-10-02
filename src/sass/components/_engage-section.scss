@@ -1,0 +1,65 @@
+@use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
+
+
+.engage-wrapper{
+    position: relative;
+    width: $full-width;
+    height: 500px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin: auto;
+    background: $secondary-color;
+    .engage-box{
+        width: $full-width;
+        padding: $padding-md;
+        width: $full-width;
+        @include transition(all, .4s);
+
+        a{
+            color: $background-color;
+            z-index: 3;
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(12, 12, 12, 0.404); /* Adjust the color and opacity as needed */
+          }
+        &:hover{
+            h1{
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .box-1{
+        height: $full-width;
+        width: $full-width;
+        background: url('/assets/images/prayer.png'), rgb(32, 32, 32) 50% / cover no-repeat;
+        background-position: center;
+        color: $background-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+        
+        h1{
+            line-height: 1;
+            z-index: 2;
+        }
+    }
+
+    .box-2{
+        width: $full-width;
+        height: $full-width;
+        background: url('/assets/images/engaged.png'), rgb(27, 27, 27) 50% / cover no-repeat;
+        @extend .box-1
+
+    }
+}
+    

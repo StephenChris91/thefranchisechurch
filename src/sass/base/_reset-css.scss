@@ -29,6 +29,10 @@ li{
     text-decoration: none;
 }
 
+a{
+  text-decoration: none;
+}
+
 /* Set core root defaults */
 html:focus-within {
   scroll-behavior: smooth;
@@ -45,6 +49,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 /* A elements that don't have a class get default styles */
 a:not([class]) {
   text-decoration-skip-ink: auto;
+  text-decoration: none;
 }
 
 /* Make images easier to work with */
