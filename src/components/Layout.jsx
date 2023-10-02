@@ -1,6 +1,7 @@
 import { useState } from "react"
 
 import Navbar from "./Navbar"
+import Footer from "./Footer";
 // import MobileNavbar from "./mobile-nav"
 
 
@@ -12,8 +13,8 @@ function Layout( { children } ) {
     return (
       <>
         <Navbar isOpen={isOpen}/>
-        {/* <MobileNavbar/> */}
         {children}
+        <Footer />
       </>
     )
   }

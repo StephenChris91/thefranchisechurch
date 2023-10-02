@@ -28,17 +28,21 @@
         width: $medium-width;
         height: $full-width;
         margin-top: -100px;
+        padding: $padding-sm;
 
         .newsletter-title{
             font-weight: 800;
             font-size: $font-size-xs;
-            margin-bottom: 100px;
-            max-width: 100px;
+            margin-bottom: 10px;
         }
 
         .call-to-action{
             color: $primary-color;
-            font-size: calc($font-size-xl * 2)
+            font-size: calc($font-size-xl * 3);
+            max-width: 300px;
+            line-height: 1;
+            margin-bottom: 20px;
+
         }
         form{
             @include flexbox(column, space-between, start);
