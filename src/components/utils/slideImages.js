@@ -6,7 +6,6 @@ import slide_image_5 from "../../assets/images/img_5.jpg";
 import slide_image_6 from "../../assets/images/img_6.jpg";
 import slide_image_7 from "../../assets/images/img_7.jpg";
 import slide_image_8 from "../../assets/images/img_8.jpg";
-
 import slide_image_9 from "../../assets/images/img_9.jpg";
 import slide_image_10 from "../../assets/images/img_10.jpg";
 import slide_image_11 from "../../assets/images/img_11.jpg";
