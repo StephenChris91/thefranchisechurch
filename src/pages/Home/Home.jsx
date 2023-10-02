@@ -4,6 +4,7 @@ import Header from '../../components/Header';
 import IntroBox from '../../components/IntroBox';
 import PodcastPlayer from '../../components/PodcastPlayer';
 import Slider from '../../components/Slider';
+import NewsletterSection from '../../components/NewsletterSection';
 
 function Home() {
 
@@ -15,6 +16,7 @@ function Home() {
       <EngageSection />
       <Slider />
       {/* <PodcastPlayer /> */}
+      <NewsletterSection />
     </div>
   )
 }

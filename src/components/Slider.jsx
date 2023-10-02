@@ -24,9 +24,12 @@ import { slideImages } from './utils/slideImages';
 
 
 function Slider() {
+
+  console.log(slideImages)
+
   return (
     <div className="container">
-      <h1 className="heading">Gallery</h1>
+      {/* <h1 className="heading">Gallery</h1> */}
       <Swiper
         effect={'coverflow'}
         grabCursor={true}
@@ -40,10 +43,10 @@ function Slider() {
           modifier: 2.5,
         }}
         // pagination={{ clickable: false }}
-        navigation={{
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        }}
+        // navigation={{
+        //   nextEl: '.swiper-button-next',
+        //   prevEl: '.swiper-button-prev',
+        // }}
         className="swiper_container"
       >
         
@@ -52,16 +55,6 @@ function Slider() {
             <img src={slideImage} alt="slide_image" />
           </SwiperSlide>
         ))}
-
-        <div className="slider-controler">
-          <div className="swiper-button-prev slider-arrow">
-            <ion-icon name="arrow-back-outline"></ion-icon>
-          </div>
-          <div className="swiper-button-next slider-arrow">
-            <ion-icon name="arrow-forward-outline"></ion-icon>
-          </div>
-          <div className="swiper-pagination"></div>
-        </div>
       </Swiper>
     </div>
   );
