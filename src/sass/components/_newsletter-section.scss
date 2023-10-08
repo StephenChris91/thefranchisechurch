@@ -4,7 +4,6 @@
 
 .newsletter-wrapper{
     min-width: $full-width;
-    // padding: $padding-lg 0;
     height: auto;
     @include flexbox(row, space-around, center);
     margin: auto;

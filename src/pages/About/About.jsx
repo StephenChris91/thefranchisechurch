@@ -1,10 +1,13 @@
+import NewsletterSection from '../../components/NewsletterSection';
+import Slider from '../../components/Slider';
 
+import { sliderImages } from '../../components/utils/sliderImages';
 
 function About() {
 
     return (
       <>
-        <h1>About</h1>
+        <NewsletterSection  />
       </>
     )
   }

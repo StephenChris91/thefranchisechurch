@@ -1,63 +1,50 @@
-// Import React
-import React from 'react';
+// Carousel.js
+import React, { useState, useEffect } from 'react';
+// import './Carousel.scss';
 
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
 
-// Import Swiper styles
-import 'swiper/swiper-bundle.min.css';
+const Slider = ({ sliders }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-// Import Swiper core and required modules
-import SwiperCore, { EffectCoverflow, Pagination, Navigation } from 'swiper';
+  const goToSlide = (index) => {
+    setCurrentIndex(index);
+  };
 
-// Import Swiper styles
-// import 'swiper/react/modules/effect-coverflow/effect-coverflow.min.css';
-// import 'swiper/react/modules/pagination/pagination.min.scss';
-// import 'swiper/react/modules/navigation/navigation.min.scss';
+  const goToNextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % sliders.length);
+  };
 
+  const goToPrevSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? sliders.length - 1 : prevIndex - 1
+    );
+  };
 
-// Initialize Swiper core
-SwiperCore.use([EffectCoverflow, Pagination, Navigation]);
+  useEffect(() => {
+    const intervalId = setInterval(goToNextSlide, 10000); // Change the interval as needed (in milliseconds)
 
-// Import your slide images
-import { slideImages } from './utils/slideImages';
-
-
-function Slider() {
-
-  console.log(slideImages)
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []); // Empty dependency array ensures the effect runs once on mount
 
   return (
-    <div className="container">
-      {/* <h1 className="heading">Gallery</h1> */}
-      <Swiper
-        effect={'coverflow'}
-        grabCursor={true}
-        centeredSlides={true}
-        loop={true}
-        slidesPerView={6}
-        coverflowEffect={{
-          rotate: 0,
-          stretch: 0,
-          depth: 100,
-          modifier: 2.5,
-        }}
-        // pagination={{ clickable: false }}
-        // navigation={{
-        //   nextEl: '.swiper-button-next',
-        //   prevEl: '.swiper-button-prev',
-        // }}
-        className="swiper_container"
-      >
-        
-        {slideImages.map((slideImage, index) => (
-          <SwiperSlide key={index}>
-            <img src={slideImage} alt="slide_image" />
-          </SwiperSlide>
+    <div className="carousel-container">
+      <div className="carousel-slider" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+        {sliders.map((image, index) => (
+          <div key={index} className={`carousel-slide ${index === currentIndex ? 'active' : ''}`}>
+            <img src={image} alt={`Slide ${index + 1}`} />
+          </div>
         ))}
-      </Swiper>
+      </div>
+
+      <div className="carousel-controls">
+        <FaChevronLeft onClick={goToPrevSlide} className='carousel-icon' />
+        <FaChevronRight onClick={goToNextSlide} className='carousel-icon' />
+      </div>
     </div>
   );
-}
+};
 
 export default Slider;
