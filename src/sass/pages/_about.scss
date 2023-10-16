@@ -1,0 +1,51 @@
+@import '../../sass/abstract/variables';
+@import '../../sass/abstract/mixins';
+
+.about-wrapper{
+    padding: calc($padding-lg * 5);
+
+    .pastor-message-section{
+        @include flexbox(row, space-between, center);
+        margin: auto;
+        gap: 50px;
+        margin-bottom: 100px;
+        img{
+            height: 300px;
+            width: 300px;
+            border-radius: 50%;
+        }
+
+        .pastor-message-box{
+            .message-title{
+                text-transform: uppercase;
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    .about-franchise{
+        @include flexbox(row, space-between, center);
+        margin: auto;
+        gap: 20px;
+        margin-bottom: 100px;
+        .box{
+            .title{
+                text-transform: uppercase;
+                margin-bottom: 20px;
+            }
+            padding: $padding-lg;
+            background-color: $gray-color;
+        }
+    }
+
+    .about-us{
+        background: $gray-color;
+        text-align: center;
+        padding: $padding-lg;
+
+        h1{
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+    }
+}

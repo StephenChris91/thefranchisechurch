@@ -1,22 +1,49 @@
 import React, { useEffect, useState } from 'react';
-import Parser from 'rss-parser';
-import ReactPlayer from 'react-player'
+import axios from 'axios';
+import ReactPlayer from 'react-player';
 
 const PodcastPlayer = () => {
   const [episodes, setEpisodes] = useState([]);
 
   useEffect(() => {
     const fetchEpisodes = async () => {
-      const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/'; // Use a CORS proxy if needed
-      const feedUrl = 'https://anchor.fm/s/aec53858/podcast/rss';
-      const parser = new Parser();
-      
+      const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID; // Your Spotify API client ID
+      const clientSecret = import.meta.env.VITE_SPOTIFY_SECRET_KEY; // Your Spotify API client secret
+
       try {
-        const feed = await parser.parseURL(CORS_PROXY + feedUrl);
-        const recentEpisodes = feed.items.slice(0, 3); // Get the most recent 3 episodes
+        // Step 1: Get Access Token
+        const accessTokenResponse = await axios.post(
+          'https://accounts.spotify.com/api/token',
+          new URLSearchParams({
+            grant_type: 'client_credentials',
+          }),
+          {
+            headers: {
+              Authorization: `Basic ${btoa(`${clientId}:${clientSecret}`)}`,
+              'Content-Type': 'application/x-www-form-urlencoded',
+            },
+          }
+        );
+
+        const accessToken = accessTokenResponse.data.access_token;
+        // https://open.spotify.com/show/2ADGKfmCD2tioFbdzM7if8?si=c0a4959bc5854535
+
+        // Step 2: Get Podcast Episodes
+        const podcastId = "2ADGKfmCD2tioFbdzM7if8" // Replace with your Spotify podcast ID
+        console.log(podcastId)
+        const episodesResponse = await axios.get(
+          `https://api.spotify.com/v1/shows/${podcastId}/episodes`,
+          {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+            },
+          }
+        );
+
+        const recentEpisodes = episodesResponse.data.items.slice(0, 3);
         setEpisodes(recentEpisodes);
       } catch (error) {
-        console.error('Error fetching podcast feed:', error);
+        console.error('Error fetching Spotify podcast episodes:', error);
       }
     };
 
@@ -27,10 +54,10 @@ const PodcastPlayer = () => {
     <div>
       {episodes.map((episode, index) => (
         <div key={index}>
-          <h3>{episode.title}</h3>
-          <p>{episode.contentSnippet}</p>
-          {/* You can include a player here using one of the methods mentioned earlier */}
-          <ReactPlayer url={'https://www.youtube.com/shorts/vkrI3HYeXJ4'} controls={true} />          <hr />
+          <h3>{episode.name}</h3>
+          <p>{episode.description}</p>
+          <ReactPlayer url={episode.external_urls.spotify} controls={true} />
+          <hr />
         </div>
       ))}
     </div>

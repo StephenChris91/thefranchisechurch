@@ -20,7 +20,7 @@ function Home() {
       <FeaturesBox />
       <EngageSection />
       <GallerySlider />
-      {/* <PodcastPlayer /> */}
+      <PodcastPlayer />
       <NewsletterSection />
     </div>
   )
