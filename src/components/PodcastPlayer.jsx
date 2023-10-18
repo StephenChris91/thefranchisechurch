@@ -42,6 +42,7 @@ const PodcastPlayer = () => {
 
         const recentEpisodes = episodesResponse.data.items.slice(0, 3);
         setEpisodes(recentEpisodes);
+        console.log(recentEpisodes)
       } catch (error) {
         console.error('Error fetching Spotify podcast episodes:', error);
       }
@@ -51,12 +52,17 @@ const PodcastPlayer = () => {
   }, []);
 
   return (
-    <div>
+    <div className='podcast-wrapper'>
       {episodes.map((episode, index) => (
-        <div key={index}>
-          <h3>{episode.name}</h3>
-          <p>{episode.description}</p>
-          <ReactPlayer url={episode.external_urls.spotify} controls={true} />
+        <div key={index} className='podcast'>
+          <div className='podcast-details'>
+            <img src={episode.images[0].url} alt=""/>
+            <div>
+              <h3>{episode.name}</h3>
+              <p>{episode.description}</p>
+              <ReactPlayer url={episode.audio_preview_url} controls={true} className='player'/>
+            </div>
+          </div>
           <hr />
         </div>
       ))}

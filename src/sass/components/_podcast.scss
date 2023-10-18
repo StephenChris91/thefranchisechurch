@@ -1,0 +1,30 @@
+@use '../abstract/mixins' as *;
+@use '../abstract/variables' as *;
+
+.podcast-wrapper{
+    min-width: $medium-width;
+    padding: 0 calc($padding-lg * 5);
+    @include flexbox(column, space-between, flex-start);
+    margin: auto;
+
+    .podcast{
+        // height: 600px;
+        margin-bottom: 40px;
+        .podcast-details{
+            @include flexbox(row, space-between, flex-start);
+            margin: auto;
+            gap: 20px;
+            padding-bottom: $padding-md;
+            p{
+                font-size: 12px;
+            }
+            img{
+                height: 100px;
+                width: 100px;
+            }
+        }
+        .player{
+            height: 50px !important;
+        }
+    }
+}

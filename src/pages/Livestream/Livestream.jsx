@@ -1,52 +1,70 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from "react";
+import axios from 'axios'
 import YouTube from 'react-youtube';
 
-const Livestream = () => {
-  const [isLive, setIsLive] = useState(false);
 
-  // YouTube video ID for your livestream
-  const videoId = 'YOUR_YOUTUBE_VIDEO_ID';
+
+const Livestream = () => {
+  const [post, setPost] = useState();
 
   useEffect(() => {
-    // Function to check livestream status
-    const checkLivestreamStatus = async () => {
-      try {
-        const response = await fetch(
-          `https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=YOUR_YOUTUBE_API_KEY&part=liveStreamingDetails`
-        );
-        const data = await response.json();
+  axios({
+    method: "GET",
+    url: "https://www.googleapis.com/youtube/v3/search",
+    params: {
+      part: "id,snippet",
+      eventType: "live",
+      channelId:import.meta.env.VITE_YOUTUBE_ID,
+      type: "video",
+      key: import.meta.env.VITE_YOUTUBE_API_KEY, // Replace with your actual API key
+      maxResults: "1",
+      order: "date",
+    },
+  })
+    .then((res) => {
+      console.log(res.data)
+      if (res.data.items && res.data.items.length > 0) {
+        var post = {
+          videoId: res.data.items[0].id.videoId,
+          title: res.data.items[0].snippet.title,
+          description: res.data.items[0].snippet.description,
+          thumbnail: res.data.items[0].snippet.thumbnails.default.url,
+        };
 
-        // Check if the livestream is active
-        const isLiveNow =
-          data.items &&
-          data.items[0] &&
-          data.items[0].liveStreamingDetails &&
-          data.items[0].liveStreamingDetails.concurrencyType === 'live';
-
-        setIsLive(isLiveNow);
-      } catch (error) {
-        console.error('Error checking livestream status:', error);
+        console.log(post);
+        setPost(post);
+      } else {
+        // Handle the case when no live stream is found
+        console.log("No live stream found");
       }
-    };
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+}, [post]);
 
-    // Check livestream status on component mount
-    checkLivestreamStatus();
+  const opts = {
+    height: "390",
+    width: "640",
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 1,
+      origin:"https://thitsarparami.org/"
+    },
+ };
 
-    // Check livestream status every minute
-    const interval = setInterval(checkLivestreamStatus, 60000);
+ const _onReady = (event) => {
+   // access to player in all event handlers via event.target
+   event.target.pauseVideo();
+ };
 
-    // Clear the interval on component unmount
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <div>
-      {isLive ? (
-        <YouTube videoId={videoId} />
-      ) : (
-        <p>The livestream is currently not active.</p>
-      )}
-    </div>
+ return (
+   <div>
+      <div className="stream-wrapper">
+         {post ? (<YouTube videoId={post.videoId} opts={opts} onReady={_onReady} />) : <h1>Church Service is yet to begin. Please stay tuned</h1>} 
+      <YouTube videoId="IAr_yjzD0Yg?si" opts={opts} />
+  </div>
+</div>
   );
 };
 
