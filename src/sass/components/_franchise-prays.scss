@@ -3,10 +3,10 @@
 
 
 .prays-wrapper {
-    max-width: $small-width;
+    max-width: $medium-width;
     margin: auto;
     .prays-btn{
-        @include flexbox(row, space-between, center);
+        @include flexbox(row, center, center);
         margin: auto;
         gap: 10px;
 

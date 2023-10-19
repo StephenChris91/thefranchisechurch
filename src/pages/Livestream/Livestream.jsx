@@ -74,28 +74,19 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import YouTube from 'react-youtube';
-// import CountdownTimerThursday from "./CountdownTimerThursday"; // Import your CountdownTimer components
-// import CountdownTimerSunday from "./CountdownTimerSunday";
-
-import ThursdayTimer from '../../components/ThursdayTimer'
 import SundayTimer from '../../components/SundayTimer'
 import FranchisePrays from "../../components/FranchisePrays";
 
 const Livestream = () => {
   const [post, setPost] = useState();
-  const [isThursday, setIsThursday] = useState(false);
   const [isSunday, setIsSunday] = useState(false);
 
   useEffect(() => {
-    // Check if it's Thursday or Sunday
+    // Check if it's Sunday
     const now = new Date();
-    if (now.getDay() === 4 && now.getHours() === 19) {
-      // It's Thursday at 7 PM
-      setIsThursday(true);
-    } else if (now.getDay() === 0 && now.getHours() === 10) {
-      // It's Sunday at 10 AM
+    if (now.getDay() === 0 && now.getHours() === 10) {
       setIsSunday(true);
-    }
+    } 
 
     axios({
       method: "GET",
@@ -142,16 +133,11 @@ const Livestream = () => {
 
   return (
     <div>
-      <div className="stream-wrapper">
-        {/* {!post && !isSunday ? <ThursdayTimer /> : <SundayTimer />} */}
-        {/* {!isSunday && <SundayTimer />} */}
+      <div className="stream-wrapper"> 
         {post && isSunday ?  (
           <YouTube videoId={post.videoId} opts={opts} onReady={_onReady} />
         ) : <SundayTimer />
         }
-        {/* {!post && !isThursday && !isSunday && (
-          <h1>Church Service is yet to begin. Please stay tuned</h1>
-        )} */}
       <FranchisePrays />
       </div>
     </div>

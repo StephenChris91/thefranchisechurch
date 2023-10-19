@@ -16,7 +16,7 @@ const FranchisePrays = () => {
 
   return (
     <div className="prays-wrapper">
-      <h1>Join Us in Prayer</h1>
+      <h1>Join Us in Prayer Every Friday</h1>
       <div className="prays-btn">
         <button onClick={joinZoomClient}>Join in Zoom App</button>
         <button onClick={joinZoomBrowser}>Join in Browser</button>
