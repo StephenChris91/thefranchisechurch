@@ -1,0 +1,23 @@
+@use '../abstract/mixins' as *;
+@use '../abstract/variables' as *;
+
+
+.prays-wrapper {
+    max-width: $small-width;
+    margin: auto;
+    .prays-btn{
+        @include flexbox(row, space-between, center);
+        margin: auto;
+        gap: 10px;
+
+        button{
+            cursor: pointer;
+            background: none;
+            color: $background-color;
+            border: none;
+            border-radius: $border-radius-xs;
+            background-color: $accent-color-2;
+            padding: $padding-xs;
+        }
+    }
+}

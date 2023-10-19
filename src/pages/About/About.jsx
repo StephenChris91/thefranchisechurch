@@ -40,7 +40,7 @@ function About() {
           </p>
         </div>
       </div>
-        <PodcastPlayer />
+        {/* <PodcastPlayer /> */}
         <NewsletterSection  />
         </>
     )

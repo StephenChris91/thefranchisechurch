@@ -1,0 +1,33 @@
+@use '../abstract/mixins' as *;
+@use '../abstract/variables' as *;
+
+
+.countdown-wrapper{
+    h2{
+        margin-bottom: $margin-sm;
+        font-size: 4rem;
+    }
+    .countdown{
+        max-width: $medium-width;
+        @include flexbox(row, space-between, center);
+        margin: auto;
+        gap: 10px;
+        margin-bottom: $margin-lg;
+        div{
+            background-color: $primary-color;
+            padding: $padding-md;
+            color: $text-color;
+            border-radius: $border-radius-sm;
+            width: 200px;
+            height: auto;
+    
+            h1{
+                font-size: 4rem;
+            }
+    
+            h4{
+                text-transform: uppercase;
+            }
+        }
+    }
+}
