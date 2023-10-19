@@ -88,35 +88,57 @@ const Livestream = () => {
       setIsSunday(true);
     } 
 
-    axios({
-      method: "GET",
-      url: "https://www.googleapis.com/youtube/v3/search",
-      params: {
-        part: "id,snippet",
-        eventType: "live",
-        channelId: import.meta.env.VITE_YOUTUBE_ID,
-        type: "video",
-        key: import.meta.env.VITE_YOUTUBE_API_KEY,
-        maxResults: "1",
-        order: "date",
-      },
-    })
-      .then((res) => {
-        if (res.data.items && res.data.items.length > 0) {
-          var post = {
-            videoId: res.data.items[0].id.videoId,
-            title: res.data.items[0].snippet.title,
-            description: res.data.items[0].snippet.description,
-            thumbnail: res.data.items[0].snippet.thumbnails.default.url,
-          };
+    // Reload the page every Sunday at 10 am
+    if (isSunday) {
+      const currentTime = new Date();
+      const sunday10AM = new Date(currentTime);
+      sunday10AM.setHours(10, 0, 0, 0); // Set the time to 10:00:00
+      const timeUntilReload = sunday10AM - currentTime;
 
-          setPost(post);
-        }
+      if (timeUntilReload > 0) {
+        // Schedule a page reload when it's Sunday at 10 am
+        const reloadInterval = setInterval(() => {
+          if (new Date().getDay() === 0 && new Date().getHours() === 10) {
+            // It's Sunday at 10 am, reload the page
+            clearInterval(reloadInterval);
+            window.location.reload();
+          }
+        }, timeUntilReload);
+      }
+    }
+
+    // Fetch YouTube live stream data
+    if (isSunday) {
+      axios({
+        method: "GET",
+        url: "https://www.googleapis.com/youtube/v3/search",
+        params: {
+          part: "id,snippet",
+          eventType: "live",
+          channelId: import.meta.env.VITE_YOUTUBE_ID,
+          type: "video",
+          key: import.meta.env.VITE_YOUTUBE_API_KEY,
+          maxResults: "1",
+          order: "date",
+        },
       })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
+        .then((res) => {
+          if (res.data.items && res.data.items.length > 0) {
+            var post = {
+              videoId: res.data.items[0].id.videoId,
+              title: res.data.items[0].snippet.title,
+              description: res.data.items[0].snippet.description,
+              thumbnail: res.data.items[0].snippet.thumbnails.default.url,
+            };
+
+            setPost(post);
+          }
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+        });
+    }
+  }, [isSunday]);
 
   const opts = {
     height: "390",
