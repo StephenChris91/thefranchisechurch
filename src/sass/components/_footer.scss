@@ -12,6 +12,10 @@
     background-position: center;
     background-repeat: no-repeat;
 
+    @include media-query('mobile'){
+        margin-top: -30px;
+    }
+
     .footer-title{
         color: $background-color;
         z-index: 99;
@@ -24,6 +28,11 @@
         text-align: center;
         @include flexbox(column, center, center);
 
+        @include media-query('mobile') {
+            top: 300px;
+            left: 20px;
+            width: 300px;
+        }
         img{
             width: 100px;
             height: auto;
@@ -42,8 +51,19 @@
         padding: $padding-lg;
         color: $background-color;
 
+        @include media-query('mobile'){
+            @include flexbox(column, space-between, flex-start);
+            margin: auto;
+            gap: 20px;
+        }
         .three{
             @include flexbox(column, space-between, end);
+            @include media-query('mobile'){
+                width: $full-width;
+                @include flexbox(row, space-between, center);
+                margin: auto;
+                gap: 20px;
+            }
             gap: 20px;
             // margin: auto;
         }

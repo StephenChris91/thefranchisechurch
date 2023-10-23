@@ -17,7 +17,7 @@ header{
         img{
             max-width: 30%;
         }
-        @include media-query(575px){
+        @include media-query('mobile'){
             .mobile-nav {
                 transform: translateY(100vh);
             }
@@ -25,7 +25,7 @@ header{
             .nav{
             @include flexbox(row, space-between, center);
 
-            @include media-query(575px) {
+            @include media-query('mobile') {
                 position: fixed;
                 top: -100vh;
                 left: 0;
@@ -55,8 +55,8 @@ header{
                 &:hover{
                     color: $primary-color;
                     // border-bottom: 2px solid $primary-color;
-                    background-color: #2b2a2a;
-                    padding: 10px;
+                    color: #444444;
+                    // padding: 2px;
                     border-radius: $border-radius-xs;
                 }
             }
@@ -71,7 +71,7 @@ header{
                 margin-left: 20px;
             }
 
-            @include media-query(575px){
+            @include media-query('mobile'){
                 margin: 0;
             }
         }
@@ -86,7 +86,7 @@ header{
             display: none;
             opacity: 0;
             font-size: 1.8rem;
-            @include media-query(575px){
+            @include media-query('mobile'){
                 display: flex ;
 		        opacity: 1;
             }

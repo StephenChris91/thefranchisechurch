@@ -7,7 +7,7 @@ function IntroBox(  ) {
     return (
       <>
         <div className="box-wrapper">
-        <ReactPlayer url={'https://www.youtube.com/shorts/vkrI3HYeXJ4'} controls={false} />
+        <ReactPlayer url={'https://www.youtube.com/shorts/vkrI3HYeXJ4'} controls={false} className='intro-player'/>
             <div className='intro-text'>
                 <h5 className="intro-accent">Lorem ipsum dolor sit amet.</h5>
                 <h2 className="intro-header">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia optio magni officiis corrupti. Saepe consequuntur dolores molestiae provident culpa error.</h2>

@@ -1,10 +1,23 @@
 @use '../abstract/variables';
 
-@mixin media-query($breakpoint) {
-    @media screen and (max-width: $breakpoint) {
+@mixin media-query($screen-size) {
+  @if $screen-size == 'large' {
+    @media screen and (min-width: 992px) and (max-width: 991px) {
       @content;
     }
+  } @else if $screen-size == 'tablet' {
+    @media screen and (min-width: 576px) and (max-width: 767px) {
+      @content;
+    }
+  } @else if $screen-size == 'mobile' {
+    @media screen and (max-width: 575px) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid screen size provided. Use "large," "tablet," or "mobile."';
   }
+}
+
 
   @mixin flexbox($direction, $justify, $align) {
     display: flex;

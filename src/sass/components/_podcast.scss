@@ -9,22 +9,33 @@
 
     .podcast{
         // height: 600px;
+        background-color: $secondary-color;
+        padding: $padding-xs;
         margin-bottom: 40px;
         .podcast-details{
             @include flexbox(row, space-between, flex-start);
             margin: auto;
             gap: 20px;
             padding-bottom: $padding-md;
+            h3{
+                color: $background-color;
+                margin-bottom: $margin-sm;
+            }
             p{
                 font-size: 12px;
             }
             img{
-                height: 100px;
-                width: 100px;
+                height: 50px;
+                width: 50px;
+                border-radius: 50%;
             }
         }
         .player{
             height: 50px !important;
+
+            audio{
+                background-color: transparent !important;
+            }
         }
     }
 }

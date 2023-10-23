@@ -10,10 +10,20 @@
     position: relative;
     top: -200px;
     left: 0%;
-    z-index: 999;
+    z-index: 9;
     padding: $padding-sm;
     border-radius: $border-radius-xs;
 
+    @include media-query('mobile'){
+        width: $large-width;
+        @include flexbox(column, space-between, center);
+        margin: auto;
+        top: -50px;
+
+        .intro-player{
+            width: 300px !important;
+        }
+    }
     &::after{
         content: '';
         clear: both;

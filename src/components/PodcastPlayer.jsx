@@ -59,11 +59,11 @@ const PodcastPlayer = () => {
             <img src={episode.images[0].url} alt=""/>
             <div>
               <h3>{episode.name}</h3>
-              <p>{episode.description}</p>
+              {/* <p>{episode.description}</p> */}
               <ReactPlayer url={episode.audio_preview_url} controls={true} className='player'/>
             </div>
           </div>
-          <hr />
+          {/* <hr /> */}
         </div>
       ))}
     </div>

@@ -3,6 +3,13 @@
 
 .about-wrapper{
     padding: calc($padding-lg * 5);
+    @include media-query('mobile'){
+        padding: $padding-xs;
+    }
+
+    @include media-query('tablet'){
+        padding: $padding-md;
+    }
 
     .pastor-message-section{
         @include flexbox(row, space-between, center);
@@ -14,17 +21,32 @@
             width: 300px;
             border-radius: 50%;
         }
+        @include media-query('mobile') {
+            @include flexbox(column, center, center);
+            margin: auto;
+            min-width: $full-width;
+            margin-bottom: $margin-lg;
+        }
 
+        
         .pastor-message-box{
             .message-title{
                 text-transform: uppercase;
                 margin-bottom: 30px;
+                @include media-query('mobile'){
+                    text-align: center;
+                    font-size: $font-size-lg
+                }
             }
         }
     }
 
     .about-franchise{
         @include flexbox(row, space-between, center);
+        @include media-query('mobile'){
+            @include flexbox(column, center, center);
+            margin: auto;
+        }
         margin: auto;
         gap: 20px;
         margin-bottom: 100px;
@@ -35,6 +57,9 @@
             }
             padding: $padding-lg;
             background-color: $gray-color;
+            @include media-query ('mobile'){
+                padding: $padding-xs;
+            }
         }
     }
 
@@ -42,7 +67,9 @@
         background: $gray-color;
         text-align: center;
         padding: $padding-lg;
-
+        @include media-query('mobile'){
+            margin-bottom: calc($margin-lg * 3);
+        }
         h1{
             margin-bottom: 30px;
             text-transform: uppercase;

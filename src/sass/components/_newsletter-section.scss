@@ -8,9 +8,10 @@
     @include flexbox(row, space-around, center);
     margin: auto;
     gap: 40px;
-    @include media-query(575px){
+    @include media-query('mobile'){
         @include flexbox(column, center, center);
-        padding: $padding-xs;
+        margin: auto;
+        // padding: $padding-xs;
     }
     .newsletter-left{
         width: $medium-width;
@@ -19,8 +20,12 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-color: black;
-        height: auto;
+        // height: auto;
         height: 700px;
+        @include media-query('mobile'){
+            min-width: $full-width;
+            // margin-bottom: $margin-lg;
+        }
     }
 
     .newsletter-right{
@@ -29,6 +34,11 @@
         margin-top: -100px;
         padding: $padding-sm;
 
+        @include media-query('mobile'){
+            min-width: $full-width;
+            padding: $padding-xxs;
+            margin-top: 5px;
+        }
         .newsletter-title{
             font-weight: 800;
             font-size: $font-size-xs;

@@ -1,3 +1,6 @@
+@use '../abstract/mixins' as *;
+@use '../abstract/variables' as *;
+
 /* Carousel.scss */
 .carousel-container {
     overflow: hidden;
@@ -6,8 +9,8 @@
     position: relative;
     background-color: black;
   
-    @media (max-width: 768px) {
-      height: 300px; /* Adjust the height for smaller screens */
+    @include media-query('mobile'){
+      height: 500px; /* Adjust the height for smaller screens */
     }
   }
   
@@ -37,7 +40,7 @@
   
   img {
     width: 100%;
-    height: auto;
+    height: 100%;
   }
   
   .carousel-controls {
@@ -50,6 +53,10 @@
     justify-content: center;
     gap: 2px;
     z-index: 1;
+
+    @include media-query('mobile'){
+      display: none;
+    }
   
     .carousel-icon {
       background: rgba(0, 0, 0, 0.466);
@@ -60,7 +67,7 @@
       color: white;
     }
   
-    @media (max-width: 768px) {
+    @include media-query ('mobile') {
       top: 80%; /* Adjust the position for smaller screens */
       left: 50%; /* Center the controls horizontally on smaller screens */
       transform: translateX(-50%) translateY(-50%);
