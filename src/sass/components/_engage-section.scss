@@ -9,6 +9,7 @@
     @include flexbox(row, center, center);
     margin: auto;
     background: $secondary-color;
+    overflow: hidden;
 
     @include media-query('mobile'){
         @include flexbox(column, center, center);
