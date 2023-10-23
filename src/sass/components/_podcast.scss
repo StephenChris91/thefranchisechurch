@@ -35,7 +35,8 @@
             margin: auto;
             gap: 5px;
             }
-            div{
+            .podcast-details-box{
+                max-width: $large-width !important;
                 @include media-query('mobile'){
                     max-width: $average-width;
                 }
@@ -59,6 +60,7 @@
             max-width: $full-width !important;
             audio{
                 background-color: transparent !important;
+                width: $large-width !important;
                 @include media-query('mobile'){
                     max-width: $large-width !important;
                 }

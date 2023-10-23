@@ -57,7 +57,7 @@ const PodcastPlayer = () => {
         <div key={index} className='podcast'>
           <div className='podcast-details'>
             <img src={episode.images[0].url} alt=""/>
-            <div>
+            <div className='podcast-details-box'>
               <h3>{episode.name}</h3>
               {/* <p>{episode.description}</p> */}
               <ReactPlayer url={episode.audio_preview_url} controls={true} className='player'/>
