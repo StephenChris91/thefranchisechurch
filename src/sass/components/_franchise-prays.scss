@@ -5,11 +5,27 @@
 .prays-wrapper {
     max-width: $medium-width;
     margin: auto;
+
+    @include media-query('mobile'){
+        max-width: $large-width;
+
+        h1{
+            font-size: $font-size-xl;
+            line-height: 1;
+            margin-bottom: $margin-md;
+        }
+    }
     .prays-btn{
         @include flexbox(row, center, center);
         margin: auto;
         gap: 10px;
+        
 
+        @include media-query('mobile'){
+            @include flexbox(column, center, center);
+            margin: auto;
+            min-width: $full-width;
+        }
         button{
             cursor: pointer;
             background: none;
@@ -17,7 +33,13 @@
             border: none;
             border-radius: $border-radius-xs;
             background-color: $accent-color-2;
-            padding: $padding-xs;
+            padding: $padding-md;
+
+            @include media-query('mobile'){
+                // @include flexbox(column, center, center);
+                // margin: auto;
+                min-width: $full-width;
+            }
         }
     }
 }
