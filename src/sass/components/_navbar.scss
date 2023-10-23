@@ -9,7 +9,7 @@
     margin: auto;
 
 header{
-    max-width: $average-width;
+    max-width: $large-width;
         z-index: 99;
         @include flexbox(row, space-between, center);
         margin: auto;
@@ -19,28 +19,33 @@ header{
         }
         @include media-query('mobile'){
             .mobile-nav {
-                transform: translateY(100vh);
+                transform: translateY(120vh);
+            }
+
+            img{
+                max-width: 30%;
+                height: auto;
             }
         }
             .nav{
-            @include flexbox(row, space-between, center);
+                @include flexbox(row, space-between, center);
 
-            @include media-query('mobile') {
-                position: fixed;
-                top: -100vh;
-                left: 0;
-                height: 100%;
-                width: 100%;
-                display: flex;
-                @include flexbox(column, center, center);
-                gap: 1.5rem;
-                background-color: $secondary-color;
-                @include transition(all, .3s);
-                .mobile-close-btn{
-                    position: absolute;
-                    top: 2rem;
-                    right: 2rem;
-                }
+                @include media-query('mobile') {
+                    position: fixed;
+                    top: -120vh;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    @include flexbox(column, center, center);
+                    gap: 1.5rem;
+                    background-color: $secondary-color;
+                    @include transition(all, .3s);
+                    .mobile-close-btn{
+                        position: absolute;
+                        top: 2rem;
+                        right: 2rem;
+                    }
             }
 
             margin: auto;
@@ -87,8 +92,9 @@ header{
             opacity: 0;
             font-size: 1.8rem;
             @include media-query('mobile'){
-                display: flex ;
+                display: block ;
 		        opacity: 1;
+                color: $background-color;
             }
         } 
     }

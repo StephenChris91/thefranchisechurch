@@ -38,9 +38,9 @@ function Navbar() {
                 </button>
               </nav>
             <button 
-            className="mobile-open-btn nav-btn" 
-            onClick={openMobileNav}>
-              <GiHamburgerMenu />
+              className="mobile-open-btn nav-btn" 
+              onClick={() => openMobileNav()}>
+                <GiHamburgerMenu />
             </button>
       </header>
       </div>

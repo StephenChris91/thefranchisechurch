@@ -1,10 +1,15 @@
 @use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
 
 
 .container {
 	max-width: 124rem;
 	padding: 1rem;
 	margin: 0 auto;
+
+	@include media-query('mobile'){
+		margin-top: -40px;
+	}
 }
 .heading {
 	padding: 1rem 0;
@@ -15,6 +20,9 @@
 	height: 20rem;
 	// padding: 2rem 0;
 	position: relative;
+	@include media-query('mobile'){
+		margin-top: -50px;
+	}
 }
 .swiper-slide {
 	width: 37rem;

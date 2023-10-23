@@ -10,7 +10,7 @@
     background-color: black;
   
     @include media-query('mobile'){
-      height: 500px; /* Adjust the height for smaller screens */
+      height: 250px; /* Adjust the height for smaller screens */
     }
   }
   
