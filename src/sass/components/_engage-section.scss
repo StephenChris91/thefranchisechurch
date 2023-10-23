@@ -63,8 +63,7 @@
     }
 
     .box-2{
-        width: $full-width;
-        height: $full-width;
+
         background: url('/assets/images/engaged.png'), rgb(27, 27, 27) 50% / cover no-repeat;
         @extend .box-1
 
