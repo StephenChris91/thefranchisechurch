@@ -14,7 +14,6 @@ function Navbar() {
 
   const openMobileNav = () => {
     navRef.current.classList.toggle('mobile-nav')
-
     // console.log(navRef)
   }
 
@@ -31,7 +30,7 @@ function Navbar() {
                 <Link to='/livestream'>Livestream</Link>
                 <button className="btn-primary">
                     Join Us Online
-                      <FaYoutube className='icon'/>
+                    <FaYoutube className='icon'/>
                 </button>
                 <button  className='mobile-close-btn nav-btn' onClick={openMobileNav}>
                     <FaTimes/>

@@ -1,0 +1,34 @@
+@use '../abstract/mixins' as *;
+@use '../abstract/variables' as *;
+
+
+    .wrapper{
+        width: $average-width;
+        height: 120vh;
+        margin: auto;
+        // .event{
+        //     width: 100%;
+        //     height: 100%;
+        //     background-color: black;;
+        // }
+
+        .container{
+            .fc{
+                height: 790px;
+
+                .fc-toolbar-title{
+                    color: $primary-color;
+                }
+            }
+        }
+        
+    }
+
+    .fc-day {
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        height: 100px; /* Set the desired height */
+        width: 100px; /* Set the desired width */
+      }
+

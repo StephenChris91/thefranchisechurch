@@ -12,7 +12,7 @@ function EngageSection(  ) {
               </Link>
             </div>
             <div className="engage-box box-2">
-              <Link to='/'>
+              <Link to='/join-us'>
                 <h1>GET INVOLVED</h1>
               </Link>
             </div>

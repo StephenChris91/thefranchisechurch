@@ -1,0 +1,85 @@
+@use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
+
+
+.sign-up-wrapper{
+    height: 80vh;
+    
+
+    .sign-up-container{
+
+        
+        @include flexbox(column, center, center);
+        margin: auto;
+        margin-top: 150px;
+        background-color: $background-color;
+        height: auto;
+        width: $large-width;
+        padding: $padding-lg 0;
+        
+        .sign-up-header{
+            min-width: $full-width;
+            background-color: $text-color;
+            text-align: center;
+            padding: calc($padding-lg);
+            color: $primary-color;
+            text-transform: uppercase;
+            margin-bottom: $margin-md;
+            // margin-top: $padding-lg;
+        }
+        
+        form{
+            @include flexbox(column, center, flex-start);
+            margin: auto;
+            gap: 30px;
+            // padding: $padding-lg;
+
+            .input-forms{
+                @include flexbox(column, center, flex-start);
+                // margin: auto;
+                gap: 30px;
+
+                div{
+                    @include flexbox(row, center, flex-start);
+                    margin: auto;
+                    gap: 20px;
+
+                    .date{
+                        min-width: 180px;
+                    }
+
+                    input{
+                        padding: $padding-xs;
+                        font-size: $font-size-xs;
+                        background-color: #eeecec;
+                        border: none;
+                        // border: 1px solid gray;
+                        border-radius: $border-radius-xs;
+                    }
+                }
+            }
+
+            .checkboxes{
+                h2{
+                    margin-bottom: $margin-lg;
+                }
+
+                form{
+                    div{
+                        .form-check-label{
+                            margin-left: $margin-sm;
+                        }
+                    }
+                }
+            }
+        }
+
+        button{
+            @include button($primary-color, $secondary-color, 200px, none, $padding-xs, $border-radius-xs);
+            text-transform: uppercase;
+            font-weight: 800;
+            margin-bottom: $margin-md;
+        }
+
+    }
+}

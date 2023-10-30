@@ -5,6 +5,7 @@ import About from './pages/About/About'
 import Events from './pages/Events/Event'
 import Contact from './pages/Contact/Contact'
 import Livestream from './pages/Livestream/Livestream'
+import Signup from './pages/Signup/Signup'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         <Route path='/event' element={<Events />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/livestream' element={<Livestream />} />
+        <Route path='/join-us' element={<Signup />} />
       </Routes>
     </>
   )
