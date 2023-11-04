@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react'
 
 
-function FeaturesBox() {
+function UpcomingEvents() {
 
     const [upcoming, setUpcoming] = useState([]);
 
     function getUpcoming () {
-        let QUERY = encodeURIComponent(`*[_type == "events"]{date, title, "imageUrl": image.asset->url}`);
+      let QUERY = encodeURIComponent(
+        '*[_type == "events"] | order(date asc) [0...3] {date, title, "imageUrl": image.asset->url}'
+      );
         let URL = `https://${import.meta.env.VITE_SANITY_PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${import.meta.env.VITE_SANITY_DATASET}?query=${QUERY}`;
 
         // fetch the content
@@ -14,8 +16,8 @@ function FeaturesBox() {
         .then((res) => res.json())
         .then(({ result }) => {
             if (result.length > 0) {
-            let recent = result.splice(0, 3)
-            setUpcoming(recent);
+            // let recent = result.splice(0, 3)
+            setUpcoming(result);
             console.log(upcoming)
             }
             // console.log(upcoming)
@@ -51,5 +53,5 @@ function FeaturesBox() {
     )
   }
   
-  export default FeaturesBox
+  export default UpcomingEvents
   
