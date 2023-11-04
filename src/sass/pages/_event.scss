@@ -4,15 +4,51 @@
 
     .wrapper{
         width: $average-width;
-        height: 120vh;
+        height: 140vh;
         margin: auto;
+        z-index: -1;
         // .event{
         //     width: 100%;
         //     height: 100%;
         //     background-color: black;;
         // }
 
+        .upcoming-wrapper{
+            padding-top: $margin-lg;
+            margin-bottom: $margin-lg;
+            h1{
+                color: $primary-color;
+                margin-bottom: $margin-lg;
+            }
+            .event-imgs{
+            @include flexbox(row, space-evenly, center);
+            margin: auto;
+            gap: 20px;
+
+                img{
+                    height: 200px;
+                    width: auto;
+                    // margin-bottom: $margin-sm;
+                }
+                .event-details{
+                    background-color: $secondary-color;
+                    padding: $padding-xs;
+                    color: $gray-color;
+                    h5{
+                        margin-bottom: 5px;
+                    }
+                    p{
+                        font-size: $font-size-xxs;
+                    }
+                }
+            }
+            
+           
+
+        }
+
         .container{
+            z-index: -10;
             .fc{
                 height: 790px;
 

@@ -14,7 +14,7 @@ function FeaturesBox() {
         .then((res) => res.json())
         .then(({ result }) => {
             if (result.length > 0) {
-                let recent = result.splice(0, 3)
+            let recent = result.splice(0, 3)
             setUpcoming(recent);
             console.log(upcoming)
             }
@@ -30,12 +30,22 @@ function FeaturesBox() {
     return (
       <>
         <section className='upcoming-wrapper'>
+          <h1>Upcoming Events</h1>
+          <div className='event-imgs'>
           {upcoming && upcoming.map((up) => (
-            <>
-                <h2>Upcoming Events</h2>
-                <img src={up.imageUrl} key={up.id} className='upcoming'></img>
-            </>
-          ))}
+            
+            <div>
+              <img src={up.imageUrl} key={up.id} className='upcoming'></img>
+              <div className='event-details'>
+                <h5>{up.title}</h5>
+                <p>{up.date}</p>
+              </div>
+              
+            </div>
+        
+      ))}
+          </div>
+          
         </section>
       </>
     )
