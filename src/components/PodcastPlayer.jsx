@@ -3,10 +3,10 @@ import axios from 'axios';
 import ReactPlayer from 'react-player';
 
 const PodcastPlayer = () => {
-  const [episodes, setEpisodes] = useState([]);
+  const [tracklists, setTracklists] = useState([]);
 
   useEffect(() => {
-    const fetchEpisodes = async () => {
+    const fetchTracklists = async () => {
       const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID; // Your Spotify API client ID
       const clientSecret = import.meta.env.VITE_SPOTIFY_SECRET_KEY; // Your Spotify API client secret
 
@@ -26,11 +26,9 @@ const PodcastPlayer = () => {
         );
 
         const accessToken = accessTokenResponse.data.access_token;
-        // https://open.spotify.com/show/2ADGKfmCD2tioFbdzM7if8?si=c0a4959bc5854535
 
-        // Step 2: Get Podcast Episodes
-        const podcastId = "2ADGKfmCD2tioFbdzM7if8" // Replace with your Spotify podcast ID
-        console.log(podcastId)
+        // Step 2: Get Podcast Tracklists
+        const podcastId = "2ADGKfmCD2tioFbdzM7if8"; // Replace with your Spotify podcast ID
         const episodesResponse = await axios.get(
           `https://api.spotify.com/v1/shows/${podcastId}/episodes`,
           {
@@ -41,29 +39,44 @@ const PodcastPlayer = () => {
         );
 
         const recentEpisodes = episodesResponse.data.items.slice(0, 3);
-        setEpisodes(recentEpisodes);
-        console.log(recentEpisodes)
+
+        // Step 3: Get Tracklists
+        const tracklistPromises = recentEpisodes.map(async (episode) => {
+          const tracklistResponse = await axios.get(
+            episode.href + '/tracks', // Use the episode's href to get tracks
+            {
+              headers: {
+                Authorization: `Bearer ${accessToken}`,
+              },
+            }
+          );
+          return tracklistResponse.data.items;
+        });
+
+        // Wait for all tracklist requests to complete
+        const tracklistData = await Promise.all(tracklistPromises);
+
+        setTracklists(tracklistData);
       } catch (error) {
-        console.error('Error fetching Spotify podcast episodes:', error);
+        console.error('Error fetching Spotify podcast tracklists:', error);
       }
     };
 
-    fetchEpisodes();
+    fetchTracklists();
   }, []);
 
   return (
     <div className='podcast-wrapper'>
-      {episodes.map((episode, index) => (
+      {tracklists.map((tracklist, index) => (
         <div key={index} className='podcast'>
           <div className='podcast-details'>
-            <img src={episode.images[0].url} alt=""/>
-            <div className='podcast-details-box'>
-              <h3>{episode.name}</h3>
-              {/* <p>{episode.description}</p> */}
-              <ReactPlayer url={episode.audio_preview_url} controls={true} className='player'/>
-            </div>
+            <h3>Tracklist {index + 1}</h3>
+            <ul>
+              {tracklist.map((track, trackIndex) => (
+                <li key={trackIndex}>{track.name}</li>
+              ))}
+            </ul>
           </div>
-          {/* <hr /> */}
         </div>
       ))}
     </div>
