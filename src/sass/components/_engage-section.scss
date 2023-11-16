@@ -3,12 +3,14 @@
 
 
 .engage-wrapper{
-    position: relative;
+    // position: relative;
     width: $full-width;
-    height: 500px;
-    @include flexbox(row, center, center);
-    margin: auto;
-    background: $secondary-color;
+    height: 400px;
+    background-color: #000;
+    background: url('/assets/images/bg-3.png'), rgb(32, 32, 32) 100% / cover no-repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     overflow: hidden;
 
     @include media-query('mobile'){

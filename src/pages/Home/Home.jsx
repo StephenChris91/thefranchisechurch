@@ -7,6 +7,8 @@ import IntroBox from '../../components/IntroBox';
 import PodcastPlayer from '../../components/PodcastPlayer';
 import GallerySlider from '../../components/GallerySlider';
 import NewsletterSection from '../../components/NewsletterSection';
+import Upcoming from '../../components/Upcoming';
+// import Header from '../../components/Header';
 
 import { sliderImages } from '../../components/utils/sliderImages';
 import Slider from '../../components/Slider';
@@ -29,11 +31,13 @@ function Home() {
       {/* <Header /> */}
       {loading ? <Spinner /> : (
         <>
-          <Slider  sliders={sliderImages}/>
+          {/* <Slider  sliders={sliderImages}/> */}
+          <Header />
           <IntroBox />
-          <FeaturesBox />
+          {/* <FeaturesBox /> */}
+          <Upcoming />
           <EngageSection />
-          <GallerySlider />
+          {/* <GallerySlider /> */}
           <PodcastPlayer />
           <NewsletterSection />
         </>

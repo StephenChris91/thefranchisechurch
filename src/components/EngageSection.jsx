@@ -6,7 +6,11 @@ function EngageSection(  ) {
     return (
       <>
         <div className="engage-wrapper">
-            <div className="engage-box box-1">
+          <div>
+            <h2>Lorem</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, assumenda.</p>
+          </div>
+            {/* <div className="engage-box box-1">
               <Link to='/about'>
                 <h1>I NEED PRAYER</h1>
               </Link>
@@ -14,8 +18,8 @@ function EngageSection(  ) {
             <div className="engage-box box-2">
               <Link to='/join-us'>
                 <h1>GET INVOLVED</h1>
-              </Link>
-            </div>
+              </Link> */}
+            {/* </div> */}
         </div>
       </>
     )

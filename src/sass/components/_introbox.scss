@@ -2,17 +2,21 @@
 @use '../abstract/mixins' as *;
 
 .box-wrapper{
-    width: $average-width;
-    background-color: $background-color;
+    width: $full-width;
+    background-color: $text-color;
     @include flexbox(row, space-between, center);
     gap: 45px;
     margin: auto;
     position: relative;
-    top: -200px;
+    // top: -200px;
     left: 0%;
     z-index: 9;
-    padding: $padding-sm;
-    border-radius: $border-radius-xs;
+    padding: $padding-sm calc($padding-lg * 5);
+    // border-radius: $border-radius-xs;
+    img{
+        width: 450px;
+        height: auto;
+    }
 
     @include media-query('mobile'){
         width: $large-width;
@@ -30,7 +34,7 @@
     }
 
     .intro-text{
-
+        color: $background-color;
         .intro-summary{
             margin-bottom: $margin-md;
         }

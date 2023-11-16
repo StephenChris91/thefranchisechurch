@@ -3,12 +3,12 @@
 
 .features-wrapper {
   // position: relative;
-  max-width: $average-width;
+  max-width: $full-width;
   @include flexbox(row, center, center);
   margin: auto;
   // gap: 2px;
-  margin-top: -150px;
-  margin-bottom: 50px;
+  // margin-top: -150px;
+  // margin-bottom: 50px;
   @include media-query('mobile') {
     @include flexbox(column, center, center);
     margin: auto;
