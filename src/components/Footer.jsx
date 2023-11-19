@@ -7,10 +7,10 @@ function Footer () {
     return (
         <>
             <div className="footer-wrapper">
-                <p className="footer-title">
+                {/* <p className="footer-title">
                     “Daily fellowship and devotion helps you draw from him what is needed for the day “
                     <img src="/assets/images/signature.png" alt="signature" />
-                </p>
+                </p> */}
                 <div className="footer-inner">
                     <div className="footer-columns one">
                         <h1>Address</h1>

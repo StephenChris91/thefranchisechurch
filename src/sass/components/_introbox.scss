@@ -35,11 +35,16 @@
 
     .intro-text{
         color: $background-color;
-        .intro-summary{
-            margin-bottom: $margin-md;
+        .intro-header{
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+        .intro-accent{
+            color: $primary-color;
         }
         button{
-            @include button($secondary-color, $background-color, full, none, 10px, 2px);
+            @include button($secondary-color, $background-color, full, 10px, 2px);
+            border: none;
         }
     }
 }

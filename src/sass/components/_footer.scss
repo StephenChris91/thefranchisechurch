@@ -2,15 +2,15 @@
 @use '../abstract/variables' as *;
 
 .footer-wrapper{
-    height: 900px;
-    clip-path: polygon(0 11%, 100% 0, 100% 100%, 0% 100%);
-    background-color: #000;
-    margin-top: -100px;
-    background-image: url('/assets/images/footer.png');
-    background-size: cover;
-    object-fit: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    // height: 900px;
+    // clip-path: polygon(0 11%, 100% 0, 100% 100%, 0% 100%);
+    // background-color: #000;
+    // margin-top: -100px;
+    // background-image: url('/assets/images/footer.png');
+    // background-size: cover;
+    // object-fit: cover;
+    // background-position: center;
+    // background-repeat: no-repeat;
 
     @include media-query('mobile'){
         margin-top: -30px;
@@ -41,10 +41,10 @@
 
     .footer-inner{
         width: $full-width;
-        background-color: rgba(17, 17, 17, 0.795);
+        background-color: $text-color;
         position: relative;
-        top: 502px;
-        height: 330px;
+        // top: 502px;
+        // height: 330px;
         bottom: 0;
         @include flexbox(row, space-between, center);
         margin: auto;
@@ -56,8 +56,25 @@
             margin: auto;
             gap: 20px;
         }
+
+        .one, .two, .three{
+            h1{
+                color: $primary-color;
+                margin-bottom: 15px;
+            }
+            gap: 10px;
+        }
         .three{
-            @include flexbox(column, space-between, end);
+            @include flexbox(row, space-between, end);
+
+            svg{
+                cursor: pointer;
+                @include transition(all, .5s);
+                &:hover{
+                    color: $primary-color
+                }
+            }
+            
             @include media-query('mobile'){
                 width: $full-width;
                 @include flexbox(row, space-between, center);

@@ -6,9 +6,10 @@ function EngageSection(  ) {
     return (
       <>
         <div className="engage-wrapper">
-          <div>
-            <h2>Lorem</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, assumenda.</p>
+          <div className="overlay"></div>
+          <div className='engage-content'>
+            <h2>OUR VISION</h2>
+            <p>"...This is THE LIFE, The FRANCHISE of Christ. Here on earth, as in Heaven"</p>
           </div>
             {/* <div className="engage-box box-1">
               <Link to='/about'>

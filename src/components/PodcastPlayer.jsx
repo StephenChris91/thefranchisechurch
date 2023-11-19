@@ -67,7 +67,10 @@ const PodcastPlayer = () => {
 
   return (
     <div className='podcast-wrapper'>
-      {tracklists.map((tracklist, index) => (
+      <h1>LATEST MESSAGES</h1>
+      <p>Get the latest messages from our Pastor.</p>
+      <button>LISTEN NOW</button>
+      {/* {tracklists.map((tracklist, index) => (
         <div key={index} className='podcast'>
           <div className='podcast-details'>
             <h3>Tracklist {index + 1}</h3>
@@ -78,7 +81,7 @@ const PodcastPlayer = () => {
             </ul>
           </div>
         </div>
-      ))}
+      ))} */}
     </div>
   );
 };

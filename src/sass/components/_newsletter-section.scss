@@ -58,7 +58,7 @@
             gap: 20px;
             min-width: $full-width;
             button{
-                @include button($primary-color, $secondary-color, 200px, none, $padding-xs, $border-radius-xs);
+                @include button($primary-color, $secondary-color, 200px, $padding-xs, $border-radius-xs);
                 text-transform: uppercase;
                 font-weight: 800;
             }

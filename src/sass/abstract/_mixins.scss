@@ -38,12 +38,12 @@
     }
   }
 
-  @mixin button($bg-color, $text-color, $width, $border, $padding, $radius) {
+  @mixin button($bg-color, $text-color, $width, $padding, $radius) {
     width: $width;
     background-color: $bg-color;
     color: $text-color;
     padding: $padding;
-    border: none;
+    // border: none;
     border-radius: $radius;
     cursor: pointer;
   

@@ -26,7 +26,7 @@ function Navbar() {
             <nav className="nav" ref={navRef}>
                 <Link to='/'>Home</Link>
                 <Link to='/about'>About</Link>
-                <Link to='/event'>Events</Link>
+                {/* <Link to='/event'>Events</Link> */}
                 <Link to='/livestream'>Livestream</Link>
                 <button className="btn-primary">
                     Join Us Online

@@ -5,6 +5,10 @@
 @use 'components';
 @use 'pages';
 @use 'themes';
+
+.main-wrapper{
+    position: relative;
+}
 /*
 sass/
 |- abstracts/

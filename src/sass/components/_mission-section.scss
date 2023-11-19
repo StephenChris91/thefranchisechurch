@@ -2,18 +2,18 @@
 @use '../abstract/mixins' as *;
 
 
-.engage-wrapper{
+.mission-wrapper{
     // position: relative;
     width: $full-width;
     height: 400px;
     background-color: #000;
-    background: url('/assets/images/bg-3.png'), rgb(32, 32, 32) 100% / cover no-repeat;
+    background: url('/assets/images/bg-5.png'), rgb(32, 32, 32) 100% / cover no-repeat;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
     position: relative;
-    @include flexbox(row, space-between, center);
+    @include flexbox(row-reverse, space-between, center);
     margin: auto;
     .overlay{
         position: absolute;
@@ -22,17 +22,24 @@
         width: $full-width;
         height: 100%;
         background: rgb(9,9,9);
-        background: linear-gradient(90deg, rgba(9,9,9,0.9864320728291317) 26%, rgba(9,9,121,0.04805672268907568) 65%);;
+        background: linear-gradient(277deg, rgba(9,9,9,0.9864320728291317) 26%, rgba(9,9,121,0.04805672268907568) 65%);
         z-index: 1;
     }
+    // &::before {
+    //     // content: '';
+        
+    //     // z-index: 1;
+    //   }
+
     @include media-query('mobile'){
         @include flexbox(column, center, center);
         margin: auto;
     }
 
-    .engage-content{
+    .mission-content{
+        position: relative;
         color: $background-color;
-        margin-top: 30px;
+        margin-top: 50px;
         padding: calc($padding-lg * 2);
         max-width: $small-width;
         z-index: 9999;

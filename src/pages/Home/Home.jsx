@@ -13,6 +13,7 @@ import Upcoming from '../../components/Upcoming';
 import { sliderImages } from '../../components/utils/sliderImages';
 import Slider from '../../components/Slider';
 import Spinner from '../../components/Loader';
+import MissionSection from '../../components/MissionSection';
 
 
 function Home() {
@@ -39,7 +40,8 @@ function Home() {
           <EngageSection />
           {/* <GallerySlider /> */}
           <PodcastPlayer />
-          <NewsletterSection />
+          <MissionSection />
+          {/* <NewsletterSection /> */}
         </>
       )}
     </div>

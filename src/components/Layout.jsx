@@ -20,7 +20,7 @@ function Layout( { children } ) {
     return (
       <>
       {loading ? <Spinner /> : (
-        <div>
+        <div className="main-wrapper">
           <Navbar isOpen={isOpen}/>
           {children}
           <Footer />

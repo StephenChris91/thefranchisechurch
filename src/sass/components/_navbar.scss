@@ -4,14 +4,17 @@
 
 
 #header-wrapper{
-    background-color: $secondary-color;
+    background-color: transparent;
     @include flexbox(row, center, center);
     margin: auto;
+    position: absolute;
+    top: 0;
+    left: 15%;
 
 header{
     max-width: $large-width;
         z-index: 99;
-        @include flexbox(row, space-between, center);
+        @include flexbox(row, center, center);
         margin: auto;
         padding: $padding-xs;
         img{
@@ -68,11 +71,13 @@ header{
         }
 
         button{
-            @include button($primary-color, $background-color, full, none, 10px, 2px);
+            @include button($primary-color, $background-color, full, 10px, 2px);
             @include flexbox(row, space-between, center);
+            border: none;
             margin: auto;
+            // font-size: 1rem;
             .icon{
-                font-size: 30px;
+                font-size: 20px;
                 margin-left: 20px;
             }
 
