@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 
 const YoutubeIframe = (props) => {
-  const { channelId, autoPlay, title } = props;
+  const { channelId, autoPlay } = props;
   const videoURL = `https://www.youtube.com/embed/live_stream?channel=${channelId}${
     autoPlay ? "&autoplay=1" : ""
   }`;
@@ -37,7 +37,7 @@ const YoutubeIframe = (props) => {
         ? 1.45
         : 1.85;
     const height = iframeRef.current
-      ? iframeRef.current.offsetWidth * 50
+      ? iframeRef.current.offsetWidth * 0.5625
       : defaultHeight;
     setVideoHeight(Math.floor(height * ratio));
     return function cleanup() {
@@ -48,7 +48,7 @@ const YoutubeIframe = (props) => {
   return (
     <iframe
       ref={iframeRef}
-      title={title}
+      //   title={title}
       width="100%"
       height={`${videoHeight}px`}
       src={videoURL}
