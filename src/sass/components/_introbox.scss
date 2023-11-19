@@ -19,14 +19,18 @@
     }
 
     @include media-query('mobile'){
-        width: $large-width;
+        width: $full-width;
         @include flexbox(column, space-between, center);
         margin: auto;
-        top: -50px;
-
-        .intro-player{
-            width: 300px !important;
+        padding: 10px;
+        text-align: center;
+        img{
+            width: 400px;
         }
+
+        // .intro-player{
+        //     width: 300px !important;
+        // }
     }
     &::after{
         content: '';
@@ -36,8 +40,11 @@
     .intro-text{
         color: $background-color;
         .intro-header{
-            line-height: 1.2;
+            line-height: 1.5;
             margin-bottom: 10px;
+            i{
+                color: $primary-color;
+            }
         }
         .intro-accent{
             color: $primary-color;

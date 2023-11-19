@@ -39,6 +39,11 @@
         h2{
             margin-bottom: 20px;
         }
+        @include media-query('mobile'){
+            max-width: $average-width;
+            margin-top: -150px;
+            padding: 5px 
+        }
     }
     // .engage-box{
     //     width: $full-width;

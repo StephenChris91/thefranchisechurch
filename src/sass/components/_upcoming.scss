@@ -10,21 +10,26 @@
         margin-bottom: $margin-lg;
         text-align: center;
     }
-    .event-imgs{
-    @include flexbox(row, center, center);
-    margin: auto;
-    gap: 15px;
     @include media-query('mobile'){
-        @include flexbox(column, center, center);
-        margin: auto;
-        gap: 10px;
+        padding: 10px;
     }
+    .event-imgs{
+        @include flexbox(row, center, center);
+        margin: auto;
+        gap: 15px;
+        @include media-query('mobile'){
+            @include flexbox(column, center, center);
+            width: $full-width;
+            margin: auto;
+            gap: 20px;
+            // padding: none;
+        }
         img{
             height: auto;
             width: 200px;
             // margin-bottom: $margin-sm;
             @include media-query('mobile'){
-                width: 300px;
+                width: 100%;
                 // padding: $padding-sm;
             }
         }

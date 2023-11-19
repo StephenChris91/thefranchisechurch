@@ -8,7 +8,7 @@ import { Link } from "react-router-dom"
 
 
 
-function Navbar() {
+function Navbar( { color } ) {
 
   const navRef = useRef();
 

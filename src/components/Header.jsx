@@ -11,13 +11,12 @@ const Header = () => {
         Your browser does not support the video tag.
       </video>
       <div className="header-content">
-        {/* Add your header content here */}
-        <h1>The Franchise Lagos</h1>
-        <p>Welcome to Church</p>
-        <button class="button-primary">
+
+        {/* <h1>THIS IS HOME</h1> */}
+        {/* <button class="button-primary">
           Join Us Today
          <FaYoutube className='icon' />
-        </button>
+        </button> */}
       </div>
     </header>
   );

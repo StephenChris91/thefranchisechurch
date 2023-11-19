@@ -58,7 +58,7 @@ header{
                 text-decoration: none;
                 text-transform:uppercase;
                 // margin-right: $margin-lg;
-                color: $background-color;
+                color: $primary-color;
                 @include transition(all, .3s);
                 &:hover{
                     color: $primary-color;
@@ -71,14 +71,15 @@ header{
         }
 
         button{
-            @include button($primary-color, $background-color, full, 10px, 2px);
+            @include button($primary-color, $background-color, full, 2px, 2px);
             @include flexbox(row, space-between, center);
             border: none;
             margin: auto;
-            // font-size: 1rem;
+            font-size: 12px;
+            padding: 0 16px;
             .icon{
-                font-size: 20px;
-                margin-left: 20px;
+                font-size: 50px;
+                margin-left: 50px;
             }
 
             @include media-query('mobile'){
@@ -95,7 +96,7 @@ header{
             color: $text-color;
             display: none;
             opacity: 0;
-            font-size: 1.8rem;
+            font-size: .7rem;
             @include media-query('mobile'){
                 display: block ;
 		        opacity: 1;

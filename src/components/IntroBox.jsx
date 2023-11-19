@@ -11,15 +11,8 @@ function IntroBox(  ) {
         <img src='/assets/images/badge.png' alt='franchise badge' />
             <div className='intro-text'>
                 <h5 className="intro-accent">What We Believe</h5>
-                {/* <h2 className="intro-header">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia optio magni officiis corrupti. Saepe consequuntur dolores molestiae provident culpa error.</h2> */}
-                <h2 className="intro-header">"But when all is said and done,
-                    God’s Temple on the mountain,
-                Firmly fixed, will dominate all mountains,
-                    towering above surrounding hills.
-                People will stream to it
-                    and many nations set out for it,"
-                Mal 4:1 (MSG) 
-                </h2>
+                <h4 className="intro-header">The FRANCHISE believes that our calling is not just thanksgiving but <i>thanksliving</i>—the true expression of our gratitude to God is in living and excelling in every aspect of life; so we utilize all God has put in us to RISE TO MORE. 
+                </h4>
                 <button> Get to know us</button>
             </div>
         </div>
