@@ -19,16 +19,16 @@
     }
   
     /* Add an overlay div on top of the video */
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: $full-width;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.9); /* Adjust the color and opacity as needed */
-      z-index: 1;
-    }
+    // &::before {
+    //   content: '';
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   width: $full-width;
+    //   height: 100%;
+    //   background-color: rgba(0, 0, 0, 0.9); /* Adjust the color and opacity as needed */
+    //   z-index: 1;
+    // }
   
     .header-content {
       position: absolute;

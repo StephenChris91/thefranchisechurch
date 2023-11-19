@@ -9,5 +9,6 @@
     @include media-query('mobile'){
         padding: $padding-xxs;
         height: 170vh;
+        margin-top: 30px;
     }
 }

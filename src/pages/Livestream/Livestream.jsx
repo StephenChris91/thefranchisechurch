@@ -1,74 +1,74 @@
-// import React, { useState, useEffect } from "react";
-// import axios from 'axios'
-// import YouTube from 'react-youtube';
+import React, { useState, useEffect } from "react";
+import axios from 'axios'
+import YouTube from 'react-youtube';
 
 
 
-// const Livestream = () => {
-//   const [post, setPost] = useState();
+const Livestream = () => {
+  const [post, setPost] = useState();
 
-//   useEffect(() => {
-//   axios({
-//     method: "GET",
-//     url: "https://www.googleapis.com/youtube/v3/search",
-//     params: {
-//       part: "id,snippet",
-//       eventType: "live",
-//       channelId:import.meta.env.VITE_YOUTUBE_ID,
-//       type: "video",
-//       key: import.meta.env.VITE_YOUTUBE_API_KEY, // Replace with your actual API key
-//       maxResults: "1",
-//       order: "date",
-//     },
-//   })
-//     .then((res) => {
-//       console.log(res.data)
-//       if (res.data.items && res.data.items.length > 0) {
-//         var post = {
-//           videoId: res.data.items[0].id.videoId,
-//           title: res.data.items[0].snippet.title,
-//           description: res.data.items[0].snippet.description,
-//           thumbnail: res.data.items[0].snippet.thumbnails.default.url,
-//         };
+  useEffect(() => {
+  axios({
+    method: "GET",
+    url: "https://www.googleapis.com/youtube/v3/search",
+    params: {
+      part: "id,snippet",
+      eventType: "live",
+      channelId:import.meta.env.VITE_YOUTUBE_ID,
+      type: "video",
+      key: import.meta.env.VITE_YOUTUBE_API_KEY, // Replace with your actual API key
+      maxResults: "1",
+      order: "date",
+    },
+  })
+    .then((res) => {
+      console.log(res.data)
+      if (res.data.items && res.data.items.length > 0) {
+        var post = {
+          videoId: res.data.items[0].id.videoId,
+          title: res.data.items[0].snippet.title,
+          description: res.data.items[0].snippet.description,
+          thumbnail: res.data.items[0].snippet.thumbnails.default.url,
+        };
 
-//         console.log(post);
-//         setPost(post);
-//       } else {
-//         // Handle the case when no live stream is found
-//         console.log("No live stream found");
-//       }
-//     })
-//     .catch((error) => {
-//       console.error("Error fetching data:", error);
-//     });
-// }, [post]);
+        console.log(post);
+        setPost(post);
+      } else {
+        // Handle the case when no live stream is found
+        console.log("No live stream found");
+      }
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+}, [post]);
 
-//   const opts = {
-//     height: "390",
-//     width: "640",
-//     playerVars: {
-//       // https://developers.google.com/youtube/player_parameters
-//       autoplay: 1,
-//       origin:"https://thitsarparami.org/"
-//     },
-//  };
+  const opts = {
+    height: "390",
+    width: "640",
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 1,
+      origin:"https://thitsarparami.org/"
+    },
+ };
 
-//  const _onReady = (event) => {
-//    // access to player in all event handlers via event.target
-//    event.target.pauseVideo();
-//  };
+ const _onReady = (event) => {
+   // access to player in all event handlers via event.target
+   event.target.pauseVideo();
+ };
 
-//  return (
-//    <div>
-//       <div className="stream-wrapper">
-//          {post ? (<YouTube videoId={post.videoId} opts={opts} onReady={_onReady} />) : <h1>Church Service is yet to begin. Please stay tuned</h1>} 
-//       <YouTube videoId="IAr_yjzD0Yg?si" opts={opts} />
-//   </div>
-// </div>
-//   );
-// };
+ return (
+   <div>
+      <div className="stream-wrapper">
+         {post ? (<YouTube videoId={post.videoId} opts={opts} onReady={_onReady} />) : <h1>Church Service is yet to begin. Please stay tuned</h1>} 
+      <YouTube videoId="IAr_yjzD0Yg?si" opts={opts} />
+  </div>
+</div>
+  );
+};
 
-// export default Livestream;
+export default Livestream;
 
 
 // import React, { useState, useEffect } from "react";
@@ -168,44 +168,44 @@
 
 // export default Livestream;
 
-import React, { useState, useEffect } from "react";
-import YouTube from 'react-youtube';
-import SundayTimer from '../../components/SundayTimer';
-import FranchisePrays from "../../components/FranchisePrays";
-import useYoutubeLive from '../../hooks/useYoutubeLive'; // Import your custom hook
+// import React, { useState, useEffect } from "react";
+// import YouTube from 'react-youtube';
+// import SundayTimer from '../../components/SundayTimer';
+// import FranchisePrays from "../../components/FranchisePrays";
+// import useYoutubeLive from '../../hooks/useYoutubeLive'; // Import your custom hook
 
-const Livestream = () => {
-  const channelId = import.meta.env.VITE_YOUTUBE_ID; // Replace with your channel ID
-  const apiKey = import.meta.env.VITE_YOUTUBE_API_KEY; // Replace with your API key
+// const Livestream = () => {
+//   const channelId = import.meta.env.VITE_YOUTUBE_ID; // Replace with your channel ID
+//   const apiKey = import.meta.env.VITE_YOUTUBE_API_KEY; // Replace with your API key
 
-  const liveData = useYoutubeLive(channelId, apiKey);
+//   const liveData = useYoutubeLive(channelId, apiKey);
 
-  const opts = {
-    height: "390",
-    width: "640",
-    playerVars: {
-      autoplay: 1,
-      origin: "https://thitsarparami.org/",
-    },
-  };
+//   const opts = {
+//     height: "390",
+//     width: "640",
+//     playerVars: {
+//       autoplay: 1,
+//       origin: "https://thitsarparami.org/",
+//     },
+//   };
 
-  const _onReady = (event) => {
-    event.target.pauseVideo();
-  };
+//   const _onReady = (event) => {
+//     event.target.pauseVideo();
+//   };
 
-  return (
-    <div>
-      <div className="stream-wrapper"> 
-        {liveData ? (
-          <YouTube videoId={liveData.videoId} opts={opts} onReady={_onReady} />
-        ) : (
-          <SundayTimer />
-        )}
-        <FranchisePrays />
-      </div>
-    </div>
-  );
-};
+//   return (
+//     <div>
+//       <div className="stream-wrapper"> 
+//         {liveData ? (
+//           <YouTube videoId={liveData.videoId} opts={opts} onReady={_onReady} />
+//         ) : (
+//           <SundayTimer />
+//         )}
+//         <FranchisePrays />
+//       </div>
+//     </div>
+//   );
+// };
 
-export default Livestream;
+// export default Livestream;
 
