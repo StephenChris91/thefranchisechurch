@@ -44,8 +44,8 @@ const Livestream = () => {
 }, [post]);
 
   const opts = {
-    height: "390",
-    width: "640",
+    height: "auto",
+    width: "90%",
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
       autoplay: 1,
