@@ -5,11 +5,11 @@
 /* src/components/Header.scss */
 
 .video-header {
-    position: relative;
+    // position: relative;
     height: 65vh; /* Adjust the height as needed */
     overflow: hidden;
     @include media-query('mobile'){
-        height: 40vh;
+        height: auto;
     };
     video {
       object-fit: cover;

@@ -219,7 +219,7 @@ export default function Livestream() {
     <div className="App">
       {/* <h1>Hello Responsive Youtube Iframe</h1> */}
       {/* <h2>{videoTitle}</h2> */}
-      <YoutubeIframe channelId={channelId} />
+      <YoutubeIframe channelId={channelId} autoplay/>
     </div>
   );
 }

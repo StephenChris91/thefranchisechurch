@@ -28,7 +28,7 @@ function Navbar( { color } ) {
                 <Link to='/about'>About</Link>
                 {/* <Link to='/event'>Events</Link> */}
                 <Link to='/livestream'>Livestream</Link>
-                <button className="btn-primary">
+                <button className="">
                     Join Us Online
                     <FaYoutube className='icon'/>
                 </button>
