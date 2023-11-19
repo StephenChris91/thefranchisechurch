@@ -62,7 +62,7 @@ const Livestream = () => {
    <div>
       <div className="stream-wrapper">
          {post ? (<YouTube videoId={post.videoId} opts={opts} onReady={_onReady} />) : <h1>Church Service is yet to begin. Please stay tuned</h1>} 
-      <YouTube videoId="IAr_yjzD0Yg?si" opts={opts} />
+      {/* <YouTube videoId="IAr_yjzD0Yg?si" opts={opts} /> */}
   </div>
 </div>
   );
