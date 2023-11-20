@@ -9,7 +9,7 @@
     height: 65vh; /* Adjust the height as needed */
     overflow: hidden;
     @include media-query('mobile'){
-        height: auto;
+        height: 100%;
     };
     video {
       object-fit: cover;

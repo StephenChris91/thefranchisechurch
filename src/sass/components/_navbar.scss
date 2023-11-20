@@ -26,8 +26,9 @@ header{
             }
 
             img{
-                max-width: 30%;
+                max-width: 20%;
                 height: auto;
+                margin-left: -50px;
             }
         }
             .nav{
@@ -100,7 +101,7 @@ header{
             @include media-query('mobile'){
                 display: block ;
 		        opacity: 1;
-                color: $background-color;
+                color: $primary-color;
             }
         } 
     }
