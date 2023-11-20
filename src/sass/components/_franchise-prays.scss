@@ -6,6 +6,10 @@
     max-width: $medium-width;
     margin: auto;
 
+    h1{
+        margin-bottom: $margin-sm;
+        text-align: center;
+    }
     @include media-query('mobile'){
         max-width: $large-width;
 

@@ -208,18 +208,23 @@
 // };
 
 // export default Livestream;
-
+import { useState } from 'react';
 import YoutubeIframe from "../../hooks/Livestream";
+import SundayTimer from "../../components/SundayTimer";
+import FranchisePrays from "../../components/FranchisePrays";
+
 
 export default function Livestream() {
   const channelId = import.meta.env.VITE_YOUTUBE_ID;
-  // const videoTitle = "[전인혁작곡] 야다(Yada) - 약속 (2019 ver)";
+  
+  const [isLive, setIsLive] = useState(false)
 
   return (
-    <div className="App">
-      {/* <h1>Hello Responsive Youtube Iframe</h1> */}
-      {/* <h2>{videoTitle}</h2> */}
-      <YoutubeIframe channelId={channelId} autoplay/>
+    <div className="stream">
+      {!isLive ? <SundayTimer /> : 
+      <YoutubeIframe channelId={channelId} autoplay isLive={isLive}/>
+      }
+      <FranchisePrays />
     </div>
   );
 }

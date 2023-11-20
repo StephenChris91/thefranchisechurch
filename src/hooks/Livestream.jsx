@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 
 const YoutubeIframe = (props) => {
-  const { channelId, autoPlay } = props;
+  const { channelId, autoPlay, isLive } = props;
   const videoURL = `https://www.youtube.com/embed/live_stream?channel=${channelId}${
     autoPlay ? "&autoplay=1" : ""
   }`;
@@ -48,7 +48,7 @@ const YoutubeIframe = (props) => {
   return (
     <iframe
       ref={iframeRef}
-      //   title={title}
+      isLive={() => setIsLive(true)}
       width="100%"
       height={`${videoHeight}px`}
       src={videoURL}

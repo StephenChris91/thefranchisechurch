@@ -4,7 +4,8 @@ import useYoutubeLive from '../hooks/useYoutubeLive'; // Import your custom hook
 const SundayTimer = () => {
   const [timeRemaining, setTimeRemaining] = useState(calculateTimeRemaining());
   const [reloading, setReloading] = useState(false);
-  const liveData = useYoutubeLive();
+  const [isLive, setIsLive] = useState(false)
+  // const liveData = useYoutubeLive();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -13,7 +14,8 @@ const SundayTimer = () => {
 
       if (newTimeRemaining.days === 0 && newTimeRemaining.hours === 0 && newTimeRemaining.minutes === 0 && newTimeRemaining.seconds === 0) {
         // Timer reached zero, check for the YouTube Live session
-        checkForYoutubeLiveSession();
+        // checkForYoutubeLiveSession();
+        setIsLive(true)
       }
     }, 1000);
 

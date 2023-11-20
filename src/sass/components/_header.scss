@@ -18,47 +18,6 @@
       
     }
   
-    /* Add an overlay div on top of the video */
-    // &::before {
-    //   content: '';
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    //   width: $full-width;
-    //   height: 100%;
-    //   background-color: rgba(0, 0, 0, 0.9); /* Adjust the color and opacity as needed */
-    //   z-index: 1;
-    // }
-  
-    // .header-content {
-    //   position: absolute;
-    //   top: 50%;
-    //   left: 50%;
-    //   transform: translate(-50%, -50%);
-    //   text-align: center;
-    //   color: #fff;
-    //   z-index: 2;
-    //   width: $full-width;
-    //   h1 {
-    //     font-size: 5rem;
-    //     margin: 0;
-    //   }
-  
-    //   p {
-    //     font-size: 2rem;
-    //     margin-bottom: 10px;
-    //   }
-
-    //   @include media-query('mobile'){
-    //     h1{
-    //       font-size: 1rem;
-    //     }
-    //   }
-
-    //   button{
-    //     @include button-with-icon($primary-color, $background-color, full, none, 10px, 2px, #fff);
-    //   }
-    // }
   }
   
   
