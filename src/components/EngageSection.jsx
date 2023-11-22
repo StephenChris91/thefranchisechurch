@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom';
+import { Reveal } from '../hooks/Reveal';
 
 
 function EngageSection(  ) {
@@ -8,19 +9,13 @@ function EngageSection(  ) {
         <div className="engage-wrapper">
           <div className="overlay"></div>
           <div className='engage-content'>
+            <Reveal>
             <h2>OUR VISION</h2>
+            </Reveal>
+            <Reveal>
             <p>"...This is THE LIFE, The FRANCHISE of Christ. Here on earth, as in Heaven"</p>
+            </Reveal>
           </div>
-            {/* <div className="engage-box box-1">
-              <Link to='/about'>
-                <h1>I NEED PRAYER</h1>
-              </Link>
-            </div>
-            <div className="engage-box box-2">
-              <Link to='/join-us'>
-                <h1>GET INVOLVED</h1>
-              </Link> */}
-            {/* </div> */}
         </div>
       </>
     )

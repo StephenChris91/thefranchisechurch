@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Reveal } from '../hooks/Reveal';
 
 
 function UpcomingEvents() {
@@ -32,22 +33,26 @@ function UpcomingEvents() {
     return (
       <>
         <section className='upcoming-wrapper'>
+      <Reveal>
           <h1>Upcoming Events</h1>
+          <Reveal>
+
           <div className='event-imgs'>
           {upcoming && upcoming.map((up) => (
-            
+            <Reveal>
             <div>
               <img src={up.imageUrl} key={up.id} className='upcoming'></img>
               <div className='event-details'>
                 <h5>{up.title}</h5>
                 <p>{up.date}</p>
               </div>
-              
             </div>
-        
-      ))}
+            </Reveal>
+        ))}
           </div>
+        </Reveal>
           
+        </Reveal>
         </section>
       </>
     )

@@ -48,7 +48,7 @@ const YoutubeIframe = (props) => {
   return (
     <iframe
       ref={iframeRef}
-      isLive={() => setIsLive(true)}
+      // isLive={() => setIsLive(true)}
       width="100%"
       height={`${videoHeight}px`}
       src={videoURL}
