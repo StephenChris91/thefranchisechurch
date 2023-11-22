@@ -5,7 +5,7 @@
 .prays-wrapper {
     max-width: $medium-width;
     margin: auto;
-
+    margin-bottom: calc($margin-lg * 5);
     h1{
         margin-bottom: $margin-sm;
         text-align: center;
