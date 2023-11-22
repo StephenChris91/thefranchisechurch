@@ -1,28 +1,25 @@
-import { FaYoutube, FaInstagram, FaTwitter } from 'react-icons/fa'
+import { FaYoutube, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { Reveal } from '../hooks/Reveal';
 
 
 function Footer () {
 
 
     return (
-        <>
+        <Reveal>
             <div className="footer-wrapper">
-                {/* <p className="footer-title">
-                    “Daily fellowship and devotion helps you draw from him what is needed for the day “
-                    <img src="/assets/images/signature.png" alt="signature" />
-                </p> */}
                 <div className="footer-inner">
                     <div className="footer-columns one">
                         <h1>Address</h1>
-                        <h3>BWC HOTEL <br />
+                        <p>BWC HOTEL <br />
                             Ahmadu Bello Way Lagos.
-                        </h3>
+                        </p>
                     </div>
                     <div className="footer-columns two">
                         <h1>Our Contact</h1>
-                            <h3>info@thefranchisechurch.com<br />
+                            <p>info@thefranchisechurch.com<br />
                                 +123-456-789
-                            </h3>
+                            </p>
                         </div>
                     <div className="footer-columns three">
                         <FaYoutube />
@@ -31,7 +28,7 @@ function Footer () {
                     </div>
                 </div>
             </div>
-        </>
+        </Reveal>
     )
 }
 
