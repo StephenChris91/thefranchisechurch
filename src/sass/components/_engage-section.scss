@@ -28,6 +28,7 @@
     @include media-query('mobile'){
         @include flexbox(column, center, center);
         margin: auto;
+        // margin-bottom: 300px;
     }
 
     .engage-content{

@@ -5,11 +5,13 @@
     padding: calc($padding-lg * 5);
     @include media-query('mobile'){
         padding: $padding-xs;
+        text-align: center;
     }
 
     @include media-query('tablet'){
         padding: $padding-md;
     }
+    line-height: 1.4;
 
     .pastor-message-section{
         @include flexbox(row, center, center);
@@ -34,16 +36,22 @@
         
         .pastor-message-box{
             width: 50%;
-            .message-title{
-                text-transform: uppercase;
-                margin-bottom: 30px;
-                @include media-query('mobile'){
-                    text-align: center;
-                    font-size: $font-size-lg;
-                    width: $full-width;
-
-                }
+            @include media-query('mobile'){
+                width: $large-width;
+                // line-height: 1.4;
             }
+            div{
+                    .message-title{
+                        text-transform: uppercase;
+                        margin-bottom: 10px;
+                        @include media-query('mobile'){
+                            text-align: center;
+                            font-size: $font-size-lg;
+                            width: 100%;
+                        }
+                    }
+            }
+            
         }
     }
 
@@ -60,6 +68,8 @@
             .title{
                 text-transform: uppercase;
                 margin-bottom: 20px;
+
+                font-size: $font-size-lg;
             }
             padding: $padding-lg;
             background-color: $gray-color;

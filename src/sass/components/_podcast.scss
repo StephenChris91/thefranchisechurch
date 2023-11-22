@@ -9,7 +9,8 @@
     @include media-query('mobile'){
         padding: 3px;
         min-width: $full-width;
-        margin-top: -230px;
+        // margin-top: -230px;
+        padding: $padding-lg 0;
         
     }
 
