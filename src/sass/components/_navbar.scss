@@ -26,7 +26,7 @@ header{
             }
 
             img{
-                max-width: 20%;
+                max-width: 40%;
                 height: auto;
                 margin-left: -50px;
             }
@@ -102,6 +102,9 @@ header{
                 display: block ;
 		        opacity: 1;
                 color: $primary-color;
+                svg{
+                    font-size: 26px;
+                }
             }
         } 
     }
