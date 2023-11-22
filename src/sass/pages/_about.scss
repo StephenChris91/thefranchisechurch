@@ -12,15 +12,19 @@
     }
 
     .pastor-message-section{
-        @include flexbox(row, space-between, center);
+        @include flexbox(row, center, center);
         margin: auto;
         gap: 50px;
         margin-bottom: 100px;
-        img{
-            height: 300px;
-            width: 300px;
-            border-radius: 50%;
+        div{
+            
+                img{
+                    height: 300px;
+                    width: 300px;
+                    border-radius: 50%;
+                }
         }
+        
         @include media-query('mobile') {
             @include flexbox(column, center, center);
             margin: auto;
@@ -30,6 +34,7 @@
 
         
         .pastor-message-box{
+            width: 50%;
             .message-title{
                 text-transform: uppercase;
                 margin-bottom: 30px;
@@ -73,6 +78,7 @@
         h1{
             margin-bottom: 30px;
             text-transform: uppercase;
+            text-align: center;
         }
     }
 }

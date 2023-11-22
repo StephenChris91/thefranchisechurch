@@ -1,4 +1,4 @@
-import { FaYoutube, FaInstagram, FaTwitter, FaFacebook } from 'react-icons/fa'
+import { FaYoutube, FaInstagram, FaTwitter } from 'react-icons/fa'
 
 
 function Footer () {
@@ -27,7 +27,6 @@ function Footer () {
                     <div className="footer-columns three">
                         <FaYoutube />
                         <FaTwitter />
-                        <FaFacebook />
                         <FaInstagram />
                     </div>
                 </div>
