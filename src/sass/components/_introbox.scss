@@ -7,12 +7,9 @@
     @include flexbox(row, center, center);
     gap: 45px;
     margin: auto;
-    // position: relative;
-    // top: -200px;
     left: 0%;
     z-index: 9;
     padding: $padding-sm calc($padding-lg * 7);
-    // border-radius: $border-radius-xs;
     img{
         width: 950px;
         height: auto;
@@ -40,9 +37,9 @@
     .intro-text{
         // width: 50%;
         color: $background-color;
-        font-weight: normal;
+        // font-weight: normal;
         .intro-header{
-            line-height: 1.5;
+            // line-height: 1.5;
             margin-bottom: 10px;
             i{
                 color: $primary-color;
@@ -50,6 +47,7 @@
         }
         .intro-accent{
             color: $primary-color;
+            font-size: 1.5rem;
         }
         button{
             @include button($secondary-color, $background-color, full, 10px, 2px);

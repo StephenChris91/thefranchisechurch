@@ -14,7 +14,7 @@ function IntroBox(  ) {
         </Reveal>
         <Reveal>
           <div className='intro-text'>
-            <h5 className="intro-accent">What We Believe</h5>
+            <h1 className="intro-accent">What We Believe</h1>
               <p className="intro-header">The FRANCHISE believes that our calling is not just thanksgiving but <i>thanksliving</i>—the true expression of our gratitude to God is in living and excelling in every aspect of life; so we utilize all God has put in us to RISE TO MORE. 
               </p>
               <Reveal>

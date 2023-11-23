@@ -39,6 +39,7 @@
         z-index: 9999;
         h2{
             margin-bottom: 20px;
+            color: $primary-color;
         }
         @include media-query('mobile'){
             max-width: $average-width;
