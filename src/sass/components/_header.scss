@@ -6,7 +6,7 @@
 
 .video-header {
     position: relative;
-    height: 65vh; /* Adjust the height as needed */
+    height: 65vh;
     overflow: hidden;
     @include media-query('mobile'){
         height: 100%;

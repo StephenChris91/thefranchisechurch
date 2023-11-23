@@ -28,6 +28,7 @@
             height: auto;
             width: 200px;
             // margin-bottom: $margin-sm;
+            
             @include media-query('mobile'){
                 width: 100%;
                 // padding: $padding-sm;

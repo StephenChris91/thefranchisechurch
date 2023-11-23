@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Reveal } from '../hooks/Reveal';
+import { motion } from 'framer-motion'
 
 
 function UpcomingEvents() {
@@ -37,11 +38,11 @@ function UpcomingEvents() {
           <h1>Upcoming Events</h1>
           <Reveal>
 
-          <div className='event-imgs'>
+          <motion.div className='event-imgs' >
           {upcoming && upcoming.map((up) => (
             <Reveal>
-            <div>
-              <img src={up.imageUrl} key={up.id} className='upcoming'></img>
+            <div className='event-imgs-inner'>
+              <motion.img src={up.imageUrl} key={up.id} className='upcoming' whileHover={{ scale: 1.1}}></motion.img>
               <div className='event-details'>
                 <h5>{up.title}</h5>
                 <p>{up.date}</p>
@@ -49,7 +50,7 @@ function UpcomingEvents() {
             </div>
             </Reveal>
         ))}
-          </div>
+          </motion.div>
         </Reveal>
           
         </Reveal>
