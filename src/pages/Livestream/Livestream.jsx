@@ -221,9 +221,7 @@ export default function Livestream() {
 
   return (
     <div className="stream">
-      {!isLive ? <SundayTimer /> : 
       <YoutubeIframe channelId={channelId} autoplay isLive={isLive}/>
-      }
       <FranchisePrays />
     </div>
   );
